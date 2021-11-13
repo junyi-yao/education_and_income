@@ -1,6 +1,6 @@
 --- 
 title: "Education and Income"
-author: "Junyi Yao, Yuezhu, Xu"
+author: "Junyi Yao(jy3178), Yuezhu Xu(yx2693)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
