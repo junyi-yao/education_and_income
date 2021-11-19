@@ -1,1 +1,94 @@
 # Missing values
+
+
+```{r setup, include=FALSE}
+# this prevents package loading message from appearing in the rendered version of your problem set
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+There are some missing values in our dataframe, we want to look into the missing values and see if there is any pattern.
+
+*Firstly, we want to know how many of our rows contain missing values*.
+
+```{r}
+library(readr)
+library(tidyverse)
+source('plot_missing.R')
+
+# this is our source data
+df <- read.csv("ca-educational-attainment-personal-income-2008-2014.csv")
+# transform the Year column to only include year
+for (i in 1:nrow(df)){
+  df[i,1] = substr(df[i,1],7,10 )
+}
+missing_counts <- data.frame(colSums(is.na(df)))
+names(missing_counts)[1] <- "Missing_count"
+missing_counts <- rownames_to_column(missing_counts)
+ggplot(missing_counts, aes(x = rowname, y = Missing_count)) +
+  geom_col(color = 'black', fill = 'blue', alpha = .3)+
+  ggtitle("Number of rows that contain a missing filed")
+
+
+
+```
+
+*We can see that the only column that is missing is  the Population.Count. Only 34 rows have missing values. But does the missing value has any pattern? Is the missing value related to any other variables? *
+
+```{r}
+
+library(ggpubr)
+missings<-filter(df, is.na(Population.Count))
+plot_education <- ggplot(data = missings, aes(x = fct_rev(fct_infreq(Educational.Attainment))))+
+  geom_bar(fill = 'blue', alpha = .3)+ coord_flip() + xlab("Education attainment")
+plot_age <- ggplot(data = missings, aes(x = fct_rev(fct_infreq(Age))))+
+  geom_bar(fill = 'blue' , alpha = .3)+ coord_flip() + xlab("Age") +
+  scale_x_discrete(limits = c("18 to 64", "65 to 80+", "00 to 17"))
+plot_gender <- ggplot(data = missings, aes(x = fct_rev(fct_infreq(Gender))))+
+  geom_bar(fill = 'blue' , alpha = .3)+ coord_flip() + xlab("Gender")
+plot_year <- ggplot(data = missings, aes(x = fct_rev(fct_infreq(Year))))+
+  geom_bar(fill = 'blue' , alpha = .3)+ coord_flip() + xlab("Year")
+plot_income <- ggplot(data = missings, aes(x = fct_rev(fct_infreq(Personal.Income))))+
+  geom_bar(fill = 'blue', alpha = .3)+ coord_flip() + xlab("Personal Income")
+plot <- ggarrange(plot_year, plot_age,plot_gender, plot_education, plot_income, ncol = 2, nrow = 3, align = 'hv')
+annotate_figure(plot, top = text_grob("Count of missing values with respect to attributes", 
+               color = "red", face = "bold", size = 14))
+
+
+
+```
+
+*From the plots above,  we cannot see patterns of the missing values with respect to Year or gender.*
+*However, We can see that the majority of the missing values are for people from 0 to 17 years old. Only 1 row for people aged over 65 is missing, and none of the rows for people between 18 and 64 is missing. So we are not surprised to see that the majority of the missing information are for people with no income and classified as "Children under 15".*
+
+*Then, we want to find what percent of rows are missing for each age group:*
+
+```{r}
+copy_df <- df
+copy_df$has_na <- is.na(df$Population.Count)
+percent_missing<- group_by(copy_df, Age, has_na)%>% summarise(count = n()) %>% 
+  pivot_longer(cols = c(has_na), names_to = 'name', values_to = 'value') %>%
+  mutate(percent = (count/sum(count))*100) %>% ungroup() %>%filter (value == TRUE)
+
+
+ggplot(percent_missing, aes(Age, percent)) + 
+  geom_col(fill = 'blue', alpha = .3)+
+    ylab('percent of rows missing') +
+  scale_y_continuous(breaks = seq(0,100,10))+ ylim(0,100)+
+  scale_x_discrete(limits = c("00 to 17","18 to 64", "65 to 80+"))+
+  ggtitle("Percent of rows missing for each age")
+
+```
+
+*We can see that a large proportion of data for residents aged 0 to 17 are missing. Very small percent of data is missing for 65 and older. No data is missing for people aged between 18 and 64.*
+
+*Finally, we use the combined plot to show the patterns:*
+
+```{r}
+plot_missing(df, percent = TRUE)
+plot_missing(df, percent = FALSE)
+
+```
+
+*The results agree with our plots made before: Only Population.Count column is missing, and the majority of the rows in our dataset does not contain any missing values.*
+
+<b>*In conclusion, the only column that contains missing values is Population.Count. A large proportion of data are missing for people aged 17 years old or younger. In addition, it doesn't make much sense to analyze income for people aged below 18. Therefore, our project will mainly focus on the data for people aged between 18 and 64.*</b>
