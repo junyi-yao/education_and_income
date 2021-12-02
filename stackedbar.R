@@ -23,15 +23,18 @@ mosaic(Personal.Income ~ Educational.Attainment ,direction = c('v','h'),
 }
 
 plot_stackedbar()
-#draw supposed graph
-data_supposed <- data_stack %>% mutate(all = sum(Freq)) %>%
-  group_by(Personal.Income) %>% mutate(total = sum(Freq)) %>% ungroup %>%
-  group_by(Educational.Attainment) %>% mutate(ratio = sum(Freq)/all) %>% ungroup %>%
-  summarise(Educational.Attainment = Educational.Attainment, Personal.Income = Personal.Income, 
-            supposed = ratio * total)
-mosaic(Personal.Income ~ Educational.Attainment ,direction = c('v','h'), 
-       data_supposed,  highlighting_fill = colors,
-       labeling = labeling_border(tl_labels = c(TRUE,TRUE), rot_labels = c(5,0,0,60)))
+#draw supposed graph?
+
+#data_supposed <- data_stack %>% mutate(all = sum(Freq)) %>%
+ # group_by(Personal.Income) %>% mutate(total = sum(Freq)) %>% ungroup %>% 
+ # group_by(Educational.Attainment) %>% mutate(ratio = sum(Freq)/all) %>% ungroup %>%
+ # summarise(Educational.Attainment = Educational.Attainment, Personal.Income = Personal.Income, 
+ #            supposed = ratio * total)
+#mosaic(Personal.Income ~ Educational.Attainment ,direction = c('v','h'), 
+ #      data_supposed,  highlighting_fill = colors,
+ #       labeling = labeling_border(tl_labels = c(TRUE,TRUE), rot_labels = c(5,0,0,60)))
+
+
 
 #Over years
 plot_stackedbar(2008)

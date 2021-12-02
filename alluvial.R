@@ -5,7 +5,7 @@ library(ggalluvial)
 library(patchwork)
 
 data<-read.csv(file = 'ca-educational-attainment-personal-income-2008-2014.csv', header = TRUE)
-data_p<-na.omit(data)
+data_p<-data %>% filter(Age == '18 to 64')
 data_p$Educational.Attainment<-factor(data_p$Educational.Attainment,
                                       levels = c("Bachelor's degree or higher","Some college, less than 4-yr degree",
                                                  "High school or equivalent","No high school diploma"))
@@ -97,5 +97,5 @@ p6<-plot_alluvial(2013)
 p7<-plot_alluvial(2014)
 
 
-#Should observe in other ways (quantative ones)
+#Should observe in other ways (quantative ones) (in the interactive.R)
  

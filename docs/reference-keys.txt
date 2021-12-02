@@ -5,3 +5,9 @@ missing-values
 results
 interactive-component
 conclusion
+static
+alluvial
+stacked-bar
+faceted-stacked-bar
+line-plot
+interactive-choices-for-users-bar-plots

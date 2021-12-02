@@ -24,7 +24,7 @@
 <meta name="author" content="Junyi Yao(jy3178), Yuezhu Xu(yx2693)" />
 
 
-<meta name="date" content="2021-11-19" />
+<meta name="date" content="2021-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,70 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -77,7 +141,13 @@
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#static"><i class="fa fa-check"></i><b>5.1</b> Static</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#alluvial"><i class="fa fa-check"></i><b>5.1.1</b> Alluvial</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
@@ -101,7 +171,180 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
+<p>This is the overall data preprocessing</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="results.html#cb1-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;ca-educational-attainment-personal-income-2008-2014.csv&#39;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-2"><a href="results.html#cb1-2" aria-hidden="true" tabindex="-1"></a>data_p<span class="ot">&lt;-</span>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Age <span class="sc">==</span> <span class="st">&#39;18 to 64&#39;</span>)</span>
+<span id="cb1-3"><a href="results.html#cb1-3" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Educational.Attainment<span class="ot">&lt;-</span><span class="fu">factor</span>(data_p<span class="sc">$</span>Educational.Attainment,</span>
+<span id="cb1-4"><a href="results.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Bachelor&#39;s degree or higher&quot;</span>,<span class="st">&quot;Some college, less than 4-yr degree&quot;</span>,</span>
+<span id="cb1-5"><a href="results.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                                                 <span class="st">&quot;High school or equivalent&quot;</span>,<span class="st">&quot;No high school diploma&quot;</span>))</span>
+<span id="cb1-6"><a href="results.html#cb1-6" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Personal.Income<span class="ot">&lt;-</span><span class="fu">factor</span>(data_p<span class="sc">$</span>Personal.Income, </span>
+<span id="cb1-7"><a href="results.html#cb1-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&#39;$75,000 and over&#39;</span>,<span class="st">&#39;$50,000 to $74,999&#39;</span>,<span class="st">&#39;$35,000 to $49,999&#39;</span>,<span class="st">&#39;$25,000 to $34,999&#39;</span>,</span>
+<span id="cb1-8"><a href="results.html#cb1-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&#39;$15,000 to $24,999&#39;</span>,<span class="st">&#39;$10,000 to $14,999&#39;</span>,<span class="st">&#39;$5,000 to $9,999&#39;</span>,<span class="st">&#39;No Income&#39;</span>))</span>
+<span id="cb1-9"><a href="results.html#cb1-9" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Year<span class="ot">&lt;-</span><span class="fu">fct_recode</span>(data_p<span class="sc">$</span>Year,</span>
+<span id="cb1-10"><a href="results.html#cb1-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2008&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2008 12:00:00 AM&#39;</span>,<span class="st">&quot;2009&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2009 12:00:00 AM&#39;</span>,</span>
+<span id="cb1-11"><a href="results.html#cb1-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2010&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2010 12:00:00 AM&#39;</span>,<span class="st">&quot;2011&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2011 12:00:00 AM&#39;</span>,</span>
+<span id="cb1-12"><a href="results.html#cb1-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2012&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2012 12:00:00 AM&#39;</span>,<span class="st">&quot;2013&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2013 12:00:00 AM&#39;</span>,</span>
+<span id="cb1-13"><a href="results.html#cb1-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2014&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2014 12:00:00 AM&#39;</span>)</span>
+<span id="cb1-14"><a href="results.html#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="results.html#cb1-15" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Educational.Attainment<span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(data_p<span class="sc">$</span>Educational.Attainment,</span>
+<span id="cb1-16"><a href="results.html#cb1-16" aria-hidden="true" tabindex="-1"></a>                                               <span class="st">&quot;&gt;=Bachelor&quot;</span> <span class="ot">=</span> <span class="st">&quot;Bachelor&#39;s degree or higher&quot;</span>,<span class="st">&quot;College (&lt;4year)&quot;</span> <span class="ot">=</span> <span class="st">&quot;Some college, less than 4-yr degree&quot;</span>,</span>
+<span id="cb1-17"><a href="results.html#cb1-17" aria-hidden="true" tabindex="-1"></a>                                               <span class="st">&quot;High school or equivalent&quot;</span> <span class="ot">=</span> <span class="st">&quot;High school or equivalent&quot;</span>,<span class="st">&quot;&lt; high school&quot;</span> <span class="ot">=</span> <span class="st">&quot;No high school diploma&quot;</span>)</span>
+<span id="cb1-18"><a href="results.html#cb1-18" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Personal.Income<span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(data_p<span class="sc">$</span>Personal.Income,</span>
+<span id="cb1-19"><a href="results.html#cb1-19" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;[75k,inf)&quot;</span><span class="ot">=</span><span class="st">&#39;$75,000 and over&#39;</span>,<span class="st">&quot;[50k,75k)&quot;</span><span class="ot">=</span><span class="st">&#39;$50,000 to $74,999&#39;</span>,<span class="st">&quot;[35k,50k)&quot;</span><span class="ot">=</span><span class="st">&#39;$35,000 to $49,999&#39;</span>,</span>
+<span id="cb1-20"><a href="results.html#cb1-20" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;[25k,35k)&quot;</span><span class="ot">=</span><span class="st">&#39;$25,000 to $34,999&#39;</span>,<span class="st">&quot;[15k,25k)&quot;</span><span class="ot">=</span><span class="st">&#39;$15,000 to $24,999&#39;</span>,<span class="st">&quot;[10k,15k)&quot;</span><span class="ot">=</span><span class="st">&#39;$10,000 to $14,999&#39;</span>,</span>
+<span id="cb1-21"><a href="results.html#cb1-21" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;[5k,10k)&quot;</span><span class="ot">=</span><span class="st">&#39;$5,000 to $9,999&#39;</span>,<span class="st">&#39;No Income&#39;</span><span class="ot">=</span><span class="st">&#39;No Income&#39;</span>)</span></code></pre></div>
+<p>All candidate plots are as follows.</p>
+<div id="static" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Static</h2>
+<div id="alluvial" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Alluvial</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="results.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make it a function in convenience to plot by year</span></span>
+<span id="cb2-2"><a href="results.html#cb2-2" aria-hidden="true" tabindex="-1"></a>plot_alluvial<span class="ot">&lt;-</span><span class="cf">function</span>(<span class="at">year=</span><span class="dv">0</span>){</span>
+<span id="cb2-3"><a href="results.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>year<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb2-4"><a href="results.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    data_alluvial <span class="ot">&lt;-</span> data_p <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Year <span class="sc">==</span> year) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="results.html#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(Gender, Educational.Attainment, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="results.html#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb2-7"><a href="results.html#cb2-7" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb2-8"><a href="results.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    data_alluvial <span class="ot">&lt;-</span> data_p <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Gender, Educational.Attainment, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb2-9"><a href="results.html#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb2-10"><a href="results.html#cb2-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-11"><a href="results.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-12"><a href="results.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-13"><a href="results.html#cb2-13" aria-hidden="true" tabindex="-1"></a>p<span class="ot">&lt;-</span><span class="fu">ggplot</span>(<span class="at">data =</span> data_alluvial, <span class="fu">aes</span>(<span class="at">y =</span> Freq, <span class="at">axis1 =</span> Gender, <span class="at">axis2 =</span> Educational.Attainment,</span>
+<span id="cb2-14"><a href="results.html#cb2-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">axis3 =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb2-15"><a href="results.html#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Gender), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="results.html#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>(<span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a href="results.html#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">stat =</span> <span class="st">&quot;stratum&quot;</span>, </span>
+<span id="cb2-18"><a href="results.html#cb2-18" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(stratum))) <span class="sc">+</span></span>
+<span id="cb2-19"><a href="results.html#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">05</span>)) <span class="sc">+</span></span>
+<span id="cb2-20"><a href="results.html#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-21"><a href="results.html#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="results.html#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span>
+<span id="cb2-23"><a href="results.html#cb2-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-24"><a href="results.html#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (p)</span>
+<span id="cb2-25"><a href="results.html#cb2-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-26"><a href="results.html#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="results.html#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_alluvial</span>()</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="results.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#If we omit educational attempt, relation between gender and income are clearer.</span></span>
+<span id="cb3-2"><a href="results.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Or maybe stacked bar?</span></span>
+<span id="cb3-3"><a href="results.html#cb3-3" aria-hidden="true" tabindex="-1"></a>data_alluvial_2 <span class="ot">&lt;-</span> data_p <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Gender, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="results.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb3-5"><a href="results.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_alluvial_2, <span class="fu">aes</span>(<span class="at">y =</span> Freq, <span class="at">axis1 =</span> Gender, <span class="at">axis2 =</span> <span class="fu">fct_rev</span>(<span class="fu">fct_relevel</span>(Personal.Income,<span class="st">&#39;No Income&#39;</span>))))<span class="sc">+</span></span>
+<span id="cb3-6"><a href="results.html#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Gender), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="results.html#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>(<span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="results.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">stat =</span> <span class="st">&quot;stratum&quot;</span>, </span>
+<span id="cb3-9"><a href="results.html#cb3-9" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(stratum))) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="results.html#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">05</span>)) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="results.html#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="results.html#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="results.html#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="results.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Over years</span></span>
+<span id="cb4-2"><a href="results.html#cb4-2" aria-hidden="true" tabindex="-1"></a>data_alluvial_year <span class="ot">&lt;-</span> data_p <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Gender, Educational.Attainment, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="results.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count), <span class="at">Year =</span> Year) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb4-4"><a href="results.html#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="results.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#If we use facet, too small for observation</span></span>
+<span id="cb4-6"><a href="results.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_alluvial_year, <span class="fu">aes</span>(<span class="at">y =</span> Freq, <span class="at">axis1 =</span> Gender, <span class="at">axis2 =</span> Educational.Attainment,<span class="at">axis3 =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb4-7"><a href="results.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Gender), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="results.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_stratum</span>(<span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">fill =</span> <span class="st">&quot;grey80&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="results.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="at">stat =</span> <span class="st">&quot;stratum&quot;</span>, </span>
+<span id="cb4-10"><a href="results.html#cb4-10" aria-hidden="true" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(stratum))) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="results.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">05</span>)) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="results.html#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">type =</span> <span class="st">&quot;qual&quot;</span>, <span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="results.html#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Year))<span class="sc">+</span></span>
+<span id="cb4-14"><a href="results.html#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-15"><a href="results.html#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="results.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Do it separately for each year</span></span>
+<span id="cb5-2"><a href="results.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#We make the alluvial plot a function: plot_allvial as shown above</span></span>
+<span id="cb5-3"><a href="results.html#cb5-3" aria-hidden="true" tabindex="-1"></a>p1<span class="ot">&lt;-</span><span class="fu">plot_alluvial</span>(<span class="dv">2008</span>)</span>
+<span id="cb5-4"><a href="results.html#cb5-4" aria-hidden="true" tabindex="-1"></a>p2<span class="ot">&lt;-</span><span class="fu">plot_alluvial</span>(<span class="dv">2009</span>)</span>
+<span id="cb5-5"><a href="results.html#cb5-5" aria-hidden="true" tabindex="-1"></a>p3<span class="ot">&lt;-</span><span class="fu">plot_alluvial</span>(<span class="dv">2010</span>)</span>
+<span id="cb5-6"><a href="results.html#cb5-6" aria-hidden="true" tabindex="-1"></a>p5<span class="ot">&lt;-</span><span class="fu">plot_alluvial</span>(<span class="dv">2012</span>)</span>
+<span id="cb5-7"><a href="results.html#cb5-7" aria-hidden="true" tabindex="-1"></a>p6<span class="ot">&lt;-</span><span class="fu">plot_alluvial</span>(<span class="dv">2013</span>)</span>
+<span id="cb5-8"><a href="results.html#cb5-8" aria-hidden="true" tabindex="-1"></a>p7<span class="ot">&lt;-</span><span class="fu">plot_alluvial</span>(<span class="dv">2014</span>)</span></code></pre></div>
+<p>###stacked bar</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="results.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#filter on data_p when making function</span></span>
+<span id="cb6-2"><a href="results.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#make it a function</span></span>
+<span id="cb6-3"><a href="results.html#cb6-3" aria-hidden="true" tabindex="-1"></a>plot_stackedbar<span class="ot">&lt;-</span><span class="cf">function</span>(<span class="at">year =</span> <span class="dv">0</span>){</span>
+<span id="cb6-4"><a href="results.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(year <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb6-5"><a href="results.html#cb6-5" aria-hidden="true" tabindex="-1"></a>  data_stack <span class="ot">&lt;-</span> data_p  <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6"><a href="results.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Educational.Attainment, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb6-7"><a href="results.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb6-8"><a href="results.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb6-9"><a href="results.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  data_stack <span class="ot">&lt;-</span> data_p <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Year <span class="sc">==</span> year) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Educational.Attainment, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="results.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb6-11"><a href="results.html#cb6-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-12"><a href="results.html#cb6-12" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">brewer.pal</span>(<span class="dv">8</span>,<span class="st">&#39;Blues&#39;</span>))</span>
+<span id="cb6-13"><a href="results.html#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaic</span>(Personal.Income <span class="sc">~</span> Educational.Attainment ,<span class="at">direction =</span> <span class="fu">c</span>(<span class="st">&#39;v&#39;</span>,<span class="st">&#39;h&#39;</span>), </span>
+<span id="cb6-14"><a href="results.html#cb6-14" aria-hidden="true" tabindex="-1"></a>       data_stack,  <span class="at">highlighting_fill =</span> colors,</span>
+<span id="cb6-15"><a href="results.html#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">labeling =</span> <span class="fu">labeling_border</span>(<span class="at">tl_labels =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>,<span class="cn">TRUE</span>), <span class="at">rot_labels =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">60</span>)))</span>
+<span id="cb6-16"><a href="results.html#cb6-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-17"><a href="results.html#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="results.html#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>()</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Do we need draw supposed bar for comparison?</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="results.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Over years</span></span>
+<span id="cb7-2"><a href="results.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2008</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="results.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2009</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="results.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2010</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-3.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="results.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2011</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-4.png" width="672" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="results.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2012</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-5.png" width="672" /></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="results.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2013</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-6.png" width="672" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="results.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackedbar</span>(<span class="dv">2014</span>)</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-7.png" width="672" /></p>
+<p>###faceted stacked bar</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="results.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmosaic)</span>
+<span id="cb14-2"><a href="results.html#cb14-2" aria-hidden="true" tabindex="-1"></a>data_facet <span class="ot">&lt;-</span> data_p <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Gender, Educational.Attainment, Personal.Income) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="results.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Freq =</span> <span class="fu">sum</span>(Population.Count), <span class="at">Year =</span>Year) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
+<span id="cb14-4"><a href="results.html#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="results.html#cb14-5" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">brewer.pal</span>(<span class="dv">8</span>,<span class="st">&#39;Blues&#39;</span>))</span>
+<span id="cb14-6"><a href="results.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#mosaic(Personal.Income ~ Gender ,direction = c(&#39;v&#39;,&#39;h&#39;), </span></span>
+<span id="cb14-7"><a href="results.html#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="co">#data_facet,  highlighting_fill = colors,</span></span>
+<span id="cb14-8"><a href="results.html#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="co">#labeling = labeling_border(tl_labels = c(TRUE,TRUE), rot_labels = c(5,0,0,60)))</span></span>
+<span id="cb14-9"><a href="results.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Notice that once library ggmosaic is loaded, mosaic can no longer be used</span></span>
+<span id="cb14-10"><a href="results.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">#In ggmosaic, y is in reverse order#in ggmosaic, y is in reverse order. We change the level order before we make a plot</span></span>
+<span id="cb14-11"><a href="results.html#cb14-11" aria-hidden="true" tabindex="-1"></a>data_facet<span class="sc">$</span>Personal.Income<span class="ot">&lt;-</span> <span class="fu">fct_rev</span>(data_facet<span class="sc">$</span>Personal.Income)</span>
+<span id="cb14-12"><a href="results.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_facet)<span class="sc">+</span></span>
+<span id="cb14-13"><a href="results.html#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">weight =</span> Freq, <span class="at">x =</span> <span class="fu">product</span>(Gender), <span class="at">fill =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb14-14"><a href="results.html#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;legend&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;[75k,inf)&quot;</span> <span class="ot">=</span> colors[<span class="dv">1</span>], <span class="st">&quot;[50k,75k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">2</span>], </span>
+<span id="cb14-15"><a href="results.html#cb14-15" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[35k,50k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">3</span>], <span class="st">&quot;[25k,35k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">4</span>], </span>
+<span id="cb14-16"><a href="results.html#cb14-16" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[15k,25k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">5</span>], <span class="st">&quot;[10k,15k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">6</span>], </span>
+<span id="cb14-17"><a href="results.html#cb14-17" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[5k,10k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">7</span>], <span class="st">&quot;No Income&quot;</span> <span class="ot">=</span> colors[<span class="dv">8</span>]))<span class="sc">+</span></span>
+<span id="cb14-18"><a href="results.html#cb14-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Educational.Attainment))</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="results.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Is the gap between rich and poor affected by gender?</span></span>
+<span id="cb15-2"><a href="results.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_facet)<span class="sc">+</span></span>
+<span id="cb15-3"><a href="results.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">weight =</span> Freq, <span class="at">x =</span> <span class="fu">product</span>(Educational.Attainment), <span class="at">fill =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb15-4"><a href="results.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;legend&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;[75k,inf)&quot;</span> <span class="ot">=</span> colors[<span class="dv">1</span>], <span class="st">&quot;[50k,75k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">2</span>], </span>
+<span id="cb15-5"><a href="results.html#cb15-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[35k,50k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">3</span>], <span class="st">&quot;[25k,35k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">4</span>], </span>
+<span id="cb15-6"><a href="results.html#cb15-6" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[15k,25k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">5</span>], <span class="st">&quot;[10k,15k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">6</span>], </span>
+<span id="cb15-7"><a href="results.html#cb15-7" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[5k,10k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">7</span>], <span class="st">&quot;No Income&quot;</span> <span class="ot">=</span> colors[<span class="dv">8</span>]))<span class="sc">+</span></span>
+<span id="cb15-8"><a href="results.html#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(Gender))</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="results.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Or maybe we don&#39;t need include education factor? In the stackedbar.R</span></span>
+<span id="cb16-2"><a href="results.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#What can we say?</span></span>
+<span id="cb16-3"><a href="results.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="results.html#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="results.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Over years</span></span>
+<span id="cb16-6"><a href="results.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_facet)<span class="sc">+</span></span>
+<span id="cb16-7"><a href="results.html#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_mosaic</span>(<span class="fu">aes</span>(<span class="at">weight =</span> Freq, <span class="at">x =</span> <span class="fu">product</span>(Educational.Attainment), <span class="at">fill =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb16-8"><a href="results.html#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="st">&quot;legend&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;[75k,inf)&quot;</span> <span class="ot">=</span> colors[<span class="dv">1</span>], <span class="st">&quot;[50k,75k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">2</span>], </span>
+<span id="cb16-9"><a href="results.html#cb16-9" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[35k,50k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">3</span>], <span class="st">&quot;[25k,35k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">4</span>], </span>
+<span id="cb16-10"><a href="results.html#cb16-10" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[15k,25k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">5</span>], <span class="st">&quot;[10k,15k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">6</span>], </span>
+<span id="cb16-11"><a href="results.html#cb16-11" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;[5k,10k)&quot;</span> <span class="ot">=</span> colors[<span class="dv">7</span>], <span class="st">&quot;No Income&quot;</span> <span class="ot">=</span> colors[<span class="dv">8</span>]))<span class="sc">+</span></span>
+<span id="cb16-12"><a href="results.html#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(Gender), <span class="at">cols =</span> <span class="fu">vars</span>(Year))</span></code></pre></div>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-3.png" width="672" /></p>
 
+</div>
+</div>
 </div>
             </section>
 
