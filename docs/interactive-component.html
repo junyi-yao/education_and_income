@@ -24,7 +24,7 @@
 <meta name="author" content="Junyi Yao(jy3178), Yuezhu Xu(yx2693)" />
 
 
-<meta name="date" content="2021-11-19" />
+<meta name="date" content="2021-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,8 +53,79 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -77,8 +148,20 @@
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#static"><i class="fa fa-check"></i><b>5.1</b> Static</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#alluvial"><i class="fa fa-check"></i><b>5.1.1</b> Alluvial</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#stacked-bar"><i class="fa fa-check"></i><b>5.1.2</b> stacked bar</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#faceted-stacked-bar"><i class="fa fa-check"></i><b>5.1.3</b> faceted stacked bar</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="interactive-component.html"><a href="interactive-component.html#line-plot"><i class="fa fa-check"></i><b>6.0.1</b> line plot</a></li>
+<li class="chapter" data-level="6.0.2" data-path="interactive-component.html"><a href="interactive-component.html#interactive-choices-for-users-bar-plots"><i class="fa fa-check"></i><b>6.0.2</b> interactive choices for users, bar plots</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -101,7 +184,413 @@
             <section class="normal" id="section-">
 <div id="interactive-component" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Interactive component</h1>
+<p>##Interactive</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="interactive-component.html#cb1-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&#39;ca-educational-attainment-personal-income-2008-2014.csv&#39;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-2"><a href="interactive-component.html#cb1-2" aria-hidden="true" tabindex="-1"></a>data_p<span class="ot">&lt;-</span>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Age <span class="sc">==</span> <span class="st">&#39;18 to 64&#39;</span>)</span>
+<span id="cb1-3"><a href="interactive-component.html#cb1-3" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Educational.Attainment<span class="ot">&lt;-</span><span class="fu">factor</span>(data_p<span class="sc">$</span>Educational.Attainment,</span>
+<span id="cb1-4"><a href="interactive-component.html#cb1-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Bachelor&#39;s degree or higher&quot;</span>,<span class="st">&quot;Some college, less than 4-yr degree&quot;</span>,</span>
+<span id="cb1-5"><a href="interactive-component.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                                                 <span class="st">&quot;High school or equivalent&quot;</span>,<span class="st">&quot;No high school diploma&quot;</span>))</span>
+<span id="cb1-6"><a href="interactive-component.html#cb1-6" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Personal.Income<span class="ot">&lt;-</span><span class="fu">factor</span>(data_p<span class="sc">$</span>Personal.Income, </span>
+<span id="cb1-7"><a href="interactive-component.html#cb1-7" aria-hidden="true" tabindex="-1"></a>                               <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&#39;$75,000 and over&#39;</span>,<span class="st">&#39;$50,000 to $74,999&#39;</span>,<span class="st">&#39;$35,000 to $49,999&#39;</span>,<span class="st">&#39;$25,000 to $34,999&#39;</span>,</span>
+<span id="cb1-8"><a href="interactive-component.html#cb1-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&#39;$15,000 to $24,999&#39;</span>,<span class="st">&#39;$10,000 to $14,999&#39;</span>,<span class="st">&#39;$5,000 to $9,999&#39;</span>,<span class="st">&#39;No Income&#39;</span>))</span>
+<span id="cb1-9"><a href="interactive-component.html#cb1-9" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Year<span class="ot">&lt;-</span><span class="fu">fct_recode</span>(data_p<span class="sc">$</span>Year,</span>
+<span id="cb1-10"><a href="interactive-component.html#cb1-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2008&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2008 12:00:00 AM&#39;</span>,<span class="st">&quot;2009&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2009 12:00:00 AM&#39;</span>,</span>
+<span id="cb1-11"><a href="interactive-component.html#cb1-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2010&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2010 12:00:00 AM&#39;</span>,<span class="st">&quot;2011&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2011 12:00:00 AM&#39;</span>,</span>
+<span id="cb1-12"><a href="interactive-component.html#cb1-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2012&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2012 12:00:00 AM&#39;</span>,<span class="st">&quot;2013&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2013 12:00:00 AM&#39;</span>,</span>
+<span id="cb1-13"><a href="interactive-component.html#cb1-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;2014&quot;</span><span class="ot">=</span><span class="st">&#39;01/01/2014 12:00:00 AM&#39;</span>)</span>
+<span id="cb1-14"><a href="interactive-component.html#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="interactive-component.html#cb1-15" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Educational.Attainment<span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(data_p<span class="sc">$</span>Educational.Attainment,</span>
+<span id="cb1-16"><a href="interactive-component.html#cb1-16" aria-hidden="true" tabindex="-1"></a>                                               <span class="st">&quot;&gt;=Bachelor&quot;</span> <span class="ot">=</span> <span class="st">&quot;Bachelor&#39;s degree or higher&quot;</span>,<span class="st">&quot;College (&lt;4year)&quot;</span> <span class="ot">=</span> <span class="st">&quot;Some college, less than 4-yr degree&quot;</span>,</span>
+<span id="cb1-17"><a href="interactive-component.html#cb1-17" aria-hidden="true" tabindex="-1"></a>                                               <span class="st">&quot;High school or equivalent&quot;</span> <span class="ot">=</span> <span class="st">&quot;High school or equivalent&quot;</span>,<span class="st">&quot;&lt; high school&quot;</span> <span class="ot">=</span> <span class="st">&quot;No high school diploma&quot;</span>)</span>
+<span id="cb1-18"><a href="interactive-component.html#cb1-18" aria-hidden="true" tabindex="-1"></a>data_p<span class="sc">$</span>Personal.Income<span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(data_p<span class="sc">$</span>Personal.Income,</span>
+<span id="cb1-19"><a href="interactive-component.html#cb1-19" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;[75k,inf)&quot;</span><span class="ot">=</span><span class="st">&#39;$75,000 and over&#39;</span>,<span class="st">&quot;[50k,75k)&quot;</span><span class="ot">=</span><span class="st">&#39;$50,000 to $74,999&#39;</span>,<span class="st">&quot;[35k,50k)&quot;</span><span class="ot">=</span><span class="st">&#39;$35,000 to $49,999&#39;</span>,</span>
+<span id="cb1-20"><a href="interactive-component.html#cb1-20" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;[25k,35k)&quot;</span><span class="ot">=</span><span class="st">&#39;$25,000 to $34,999&#39;</span>,<span class="st">&quot;[15k,25k)&quot;</span><span class="ot">=</span><span class="st">&#39;$15,000 to $24,999&#39;</span>,<span class="st">&quot;[10k,15k)&quot;</span><span class="ot">=</span><span class="st">&#39;$10,000 to $14,999&#39;</span>,</span>
+<span id="cb1-21"><a href="interactive-component.html#cb1-21" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;[5k,10k)&quot;</span><span class="ot">=</span><span class="st">&#39;$5,000 to $9,999&#39;</span>,<span class="st">&#39;No Income&#39;</span><span class="ot">=</span><span class="st">&#39;No Income&#39;</span>)</span></code></pre></div>
+<div id="line-plot" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> line plot</h3>
+<p>population proportion for salary level for different year.
+interactive in showing the exact data when mouse is on points.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="interactive-component.html#cb2-1" aria-hidden="true" tabindex="-1"></a>data_inter<span class="ot">&lt;-</span>data_p <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year, Personal.Income) <span class="sc">%&gt;%</span>  <span class="co">#if we study gender, add Gender</span></span>
+<span id="cb2-2"><a href="interactive-component.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Year) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="interactive-component.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year_total =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="interactive-component.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Year =</span> Year, <span class="at">Personal.Income =</span> Personal.Income, <span class="at">ratio =</span> total<span class="sc">/</span>year_total) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-5"><a href="interactive-component.html#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span>
+<span id="cb2-6"><a href="interactive-component.html#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="interactive-component.html#cb2-7" aria-hidden="true" tabindex="-1"></a>fig1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_inter) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> ratio, <span class="at">color =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb2-8"><a href="interactive-component.html#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> ratio, <span class="at">group =</span> Personal.Income, <span class="at">color =</span> Personal.Income))</span>
+<span id="cb2-9"><a href="interactive-component.html#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="interactive-component.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(fig1)</span></code></pre></div>
+<div id="htmlwidget-2282ffa99dbafd2d6b4a" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2282ffa99dbafd2d6b4a">{"x":{"data":[{"x":[1,2,3,4,5,6,7],"y":[0.148984386946575,0.151329700142479,0.147298499031043,0.144349904436226,0.149401105840375,0.161497084009123,0.159978455806435],"text":["Year: 2008<br />ratio: 0.14898439<br />Personal.Income: [75k,inf)","Year: 2009<br />ratio: 0.15132970<br />Personal.Income: [75k,inf)","Year: 2010<br />ratio: 0.14729850<br />Personal.Income: [75k,inf)","Year: 2011<br />ratio: 0.14434990<br />Personal.Income: [75k,inf)","Year: 2012<br />ratio: 0.14940111<br />Personal.Income: [75k,inf)","Year: 2013<br />ratio: 0.16149708<br />Personal.Income: [75k,inf)","Year: 2014<br />ratio: 0.15997846<br />Personal.Income: [75k,inf)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"[75k,inf)","legendgroup":"[75k,inf)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.144290990398524,0.140073622417754,0.132300613055203,0.128867410536871,0.120052670067426,0.121488373921138,0.120135950548573],"text":["Year: 2008<br />ratio: 0.14429099<br />Personal.Income: [50k,75k)","Year: 2009<br />ratio: 0.14007362<br />Personal.Income: [50k,75k)","Year: 2010<br />ratio: 0.13230061<br />Personal.Income: [50k,75k)","Year: 2011<br />ratio: 0.12886741<br />Personal.Income: [50k,75k)","Year: 2012<br />ratio: 0.12005267<br />Personal.Income: [50k,75k)","Year: 2013<br />ratio: 0.12148837<br />Personal.Income: [50k,75k)","Year: 2014<br />ratio: 0.12013595<br />Personal.Income: [50k,75k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(205,150,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(205,150,0,1)"}},"hoveron":"points","name":"[50k,75k)","legendgroup":"[50k,75k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.138859865957719,0.132123161266398,0.130545323804526,0.127193301972589,0.12442116388169,0.126114267213365,0.123473220891898],"text":["Year: 2008<br />ratio: 0.13885987<br />Personal.Income: [35k,50k)","Year: 2009<br />ratio: 0.13212316<br />Personal.Income: [35k,50k)","Year: 2010<br />ratio: 0.13054532<br />Personal.Income: [35k,50k)","Year: 2011<br />ratio: 0.12719330<br />Personal.Income: [35k,50k)","Year: 2012<br />ratio: 0.12442116<br />Personal.Income: [35k,50k)","Year: 2013<br />ratio: 0.12611427<br />Personal.Income: [35k,50k)","Year: 2014<br />ratio: 0.12347322<br />Personal.Income: [35k,50k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)"}},"hoveron":"points","name":"[35k,50k)","legendgroup":"[35k,50k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.123059779625466,0.120417232673222,0.119884740239429,0.114925783795928,0.112236435335972,0.118496771511504,0.118963004835028],"text":["Year: 2008<br />ratio: 0.12305978<br />Personal.Income: [25k,35k)","Year: 2009<br />ratio: 0.12041723<br />Personal.Income: [25k,35k)","Year: 2010<br />ratio: 0.11988474<br />Personal.Income: [25k,35k)","Year: 2011<br />ratio: 0.11492578<br />Personal.Income: [25k,35k)","Year: 2012<br />ratio: 0.11223644<br />Personal.Income: [25k,35k)","Year: 2013<br />ratio: 0.11849677<br />Personal.Income: [25k,35k)","Year: 2014<br />ratio: 0.11896300<br />Personal.Income: [25k,35k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,190,103,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,190,103,1)"}},"hoveron":"points","name":"[25k,35k)","legendgroup":"[25k,35k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.153446136373936,0.160331007642373,0.154755397607694,0.152542467861474,0.154774764375718,0.152037281195887,0.149632599518415],"text":["Year: 2008<br />ratio: 0.15344614<br />Personal.Income: [15k,25k)","Year: 2009<br />ratio: 0.16033101<br />Personal.Income: [15k,25k)","Year: 2010<br />ratio: 0.15475540<br />Personal.Income: [15k,25k)","Year: 2011<br />ratio: 0.15254247<br />Personal.Income: [15k,25k)","Year: 2012<br />ratio: 0.15477476<br />Personal.Income: [15k,25k)","Year: 2013<br />ratio: 0.15203728<br />Personal.Income: [15k,25k)","Year: 2014<br />ratio: 0.14963260<br />Personal.Income: [15k,25k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"[15k,25k)","legendgroup":"[15k,25k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0850380657188927,0.0871144551293324,0.090535569312254,0.0966113195359087,0.0901727945512168,0.0883473094847422,0.0840129874716669],"text":["Year: 2008<br />ratio: 0.08503807<br />Personal.Income: [10k,15k)","Year: 2009<br />ratio: 0.08711446<br />Personal.Income: [10k,15k)","Year: 2010<br />ratio: 0.09053557<br />Personal.Income: [10k,15k)","Year: 2011<br />ratio: 0.09661132<br />Personal.Income: [10k,15k)","Year: 2012<br />ratio: 0.09017279<br />Personal.Income: [10k,15k)","Year: 2013<br />ratio: 0.08834731<br />Personal.Income: [10k,15k)","Year: 2014<br />ratio: 0.08401299<br />Personal.Income: [10k,15k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,169,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,169,255,1)"}},"hoveron":"points","name":"[10k,15k)","legendgroup":"[10k,15k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0734457745864035,0.0821290873043524,0.082562523061277,0.0793405101529534,0.0893047535636366,0.0798789530351641,0.0805999261003862],"text":["Year: 2008<br />ratio: 0.07344577<br />Personal.Income: [5k,10k)","Year: 2009<br />ratio: 0.08212909<br />Personal.Income: [5k,10k)","Year: 2010<br />ratio: 0.08256252<br />Personal.Income: [5k,10k)","Year: 2011<br />ratio: 0.07934051<br />Personal.Income: [5k,10k)","Year: 2012<br />ratio: 0.08930475<br />Personal.Income: [5k,10k)","Year: 2013<br />ratio: 0.07987895<br />Personal.Income: [5k,10k)","Year: 2014<br />ratio: 0.08059993<br />Personal.Income: [5k,10k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)"}},"hoveron":"points","name":"[5k,10k)","legendgroup":"[5k,10k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.132875000392483,0.126481733424089,0.142117333888575,0.156169301708051,0.159636312383965,0.152139959629076,0.163203854827597],"text":["Year: 2008<br />ratio: 0.13287500<br />Personal.Income: No Income","Year: 2009<br />ratio: 0.12648173<br />Personal.Income: No Income","Year: 2010<br />ratio: 0.14211733<br />Personal.Income: No Income","Year: 2011<br />ratio: 0.15616930<br />Personal.Income: No Income","Year: 2012<br />ratio: 0.15963631<br />Personal.Income: No Income","Year: 2013<br />ratio: 0.15213996<br />Personal.Income: No Income","Year: 2014<br />ratio: 0.16320385<br />Personal.Income: No Income"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,97,204,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,97,204,1)"}},"hoveron":"points","name":"No Income","legendgroup":"No Income","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.148984386946575,0.151329700142479,0.147298499031043,0.144349904436226,0.149401105840375,0.161497084009123,0.159978455806435],"text":["Year: 2008<br />ratio: 0.14898439<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2009<br />ratio: 0.15132970<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2010<br />ratio: 0.14729850<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2011<br />ratio: 0.14434990<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2012<br />ratio: 0.14940111<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2013<br />ratio: 0.16149708<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2014<br />ratio: 0.15997846<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"[75k,inf)","legendgroup":"[75k,inf)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.144290990398524,0.140073622417754,0.132300613055203,0.128867410536871,0.120052670067426,0.121488373921138,0.120135950548573],"text":["Year: 2008<br />ratio: 0.14429099<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2009<br />ratio: 0.14007362<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2010<br />ratio: 0.13230061<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2011<br />ratio: 0.12886741<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2012<br />ratio: 0.12005267<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2013<br />ratio: 0.12148837<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2014<br />ratio: 0.12013595<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(205,150,0,1)","dash":"solid"},"hoveron":"points","name":"[50k,75k)","legendgroup":"[50k,75k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.138859865957719,0.132123161266398,0.130545323804526,0.127193301972589,0.12442116388169,0.126114267213365,0.123473220891898],"text":["Year: 2008<br />ratio: 0.13885987<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2009<br />ratio: 0.13212316<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2010<br />ratio: 0.13054532<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2011<br />ratio: 0.12719330<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2012<br />ratio: 0.12442116<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2013<br />ratio: 0.12611427<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2014<br />ratio: 0.12347322<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)","dash":"solid"},"hoveron":"points","name":"[35k,50k)","legendgroup":"[35k,50k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.123059779625466,0.120417232673222,0.119884740239429,0.114925783795928,0.112236435335972,0.118496771511504,0.118963004835028],"text":["Year: 2008<br />ratio: 0.12305978<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2009<br />ratio: 0.12041723<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2010<br />ratio: 0.11988474<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2011<br />ratio: 0.11492578<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2012<br />ratio: 0.11223644<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2013<br />ratio: 0.11849677<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2014<br />ratio: 0.11896300<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,190,103,1)","dash":"solid"},"hoveron":"points","name":"[25k,35k)","legendgroup":"[25k,35k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.153446136373936,0.160331007642373,0.154755397607694,0.152542467861474,0.154774764375718,0.152037281195887,0.149632599518415],"text":["Year: 2008<br />ratio: 0.15344614<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2009<br />ratio: 0.16033101<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2010<br />ratio: 0.15475540<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2011<br />ratio: 0.15254247<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2012<br />ratio: 0.15477476<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2013<br />ratio: 0.15203728<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2014<br />ratio: 0.14963260<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"[15k,25k)","legendgroup":"[15k,25k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0850380657188927,0.0871144551293324,0.090535569312254,0.0966113195359087,0.0901727945512168,0.0883473094847422,0.0840129874716669],"text":["Year: 2008<br />ratio: 0.08503807<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2009<br />ratio: 0.08711446<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2010<br />ratio: 0.09053557<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2011<br />ratio: 0.09661132<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2012<br />ratio: 0.09017279<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2013<br />ratio: 0.08834731<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2014<br />ratio: 0.08401299<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,169,255,1)","dash":"solid"},"hoveron":"points","name":"[10k,15k)","legendgroup":"[10k,15k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0734457745864035,0.0821290873043524,0.082562523061277,0.0793405101529534,0.0893047535636366,0.0798789530351641,0.0805999261003862],"text":["Year: 2008<br />ratio: 0.07344577<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2009<br />ratio: 0.08212909<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2010<br />ratio: 0.08256252<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2011<br />ratio: 0.07934051<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2012<br />ratio: 0.08930475<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2013<br />ratio: 0.07987895<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2014<br />ratio: 0.08059993<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)","dash":"solid"},"hoveron":"points","name":"[5k,10k)","legendgroup":"[5k,10k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.132875000392483,0.126481733424089,0.142117333888575,0.156169301708051,0.159636312383965,0.152139959629076,0.163203854827597],"text":["Year: 2008<br />ratio: 0.13287500<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2009<br />ratio: 0.12648173<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2010<br />ratio: 0.14211733<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2011<br />ratio: 0.15616930<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2012<br />ratio: 0.15963631<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2013<br />ratio: 0.15213996<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2014<br />ratio: 0.16320385<br />Personal.Income: No Income<br />Personal.Income: No Income"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,97,204,1)","dash":"solid"},"hoveron":"points","name":"No Income","legendgroup":"No Income","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":54.7945205479452},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,7.6],"tickmode":"array","ticktext":["2008","2009","2010","2011","2012","2013","2014"],"tickvals":[1,2,3,4,5,6,7],"categoryorder":"array","categoryarray":["2008","2009","2010","2011","2012","2013","2014"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.0689578705743438,0.167691758839657],"tickmode":"array","ticktext":["0.075","0.100","0.125","0.150"],"tickvals":[0.075,0.1,0.125,0.15],"categoryorder":"array","categoryarray":["0.075","0.100","0.125","0.150"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"ratio","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Personal.Income","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"cc841442760":{"x":{},"y":{},"colour":{},"type":"scatter"},"cc85d1d78e1":{"x":{},"y":{},"colour":{}}},"cur_data":"cc841442760","visdat":{"cc841442760":["function (y) ","x"],"cc85d1d78e1":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="interactive-component.html#cb3-1" aria-hidden="true" tabindex="-1"></a>data_inter_gender<span class="ot">&lt;-</span>data_p <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Gender,Year, Personal.Income) <span class="sc">%&gt;%</span>  <span class="co">#if we study gender, add Gender</span></span>
+<span id="cb3-2"><a href="interactive-component.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Gender, Year) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="interactive-component.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year_total_G =</span> <span class="fu">sum</span>(Population.Count)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="interactive-component.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Year =</span> Year, <span class="at">Gender =</span> Gender, <span class="at">Personal.Income =</span> Personal.Income, <span class="at">ratio =</span> total<span class="sc">/</span>year_total_G) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-5"><a href="interactive-component.html#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span>
+<span id="cb3-6"><a href="interactive-component.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="interactive-component.html#cb3-7" aria-hidden="true" tabindex="-1"></a>fig2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data_inter_gender) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> ratio, <span class="at">color =</span> Personal.Income))<span class="sc">+</span></span>
+<span id="cb3-8"><a href="interactive-component.html#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> ratio, <span class="at">group =</span> Personal.Income, <span class="at">color =</span> Personal.Income))<span class="sc">+</span><span class="fu">facet_grid</span>(<span class="sc">~</span>Gender)</span>
+<span id="cb3-9"><a href="interactive-component.html#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="interactive-component.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(fig2)</span></code></pre></div>
+<div id="htmlwidget-b5c0e2e2b57a9424ad70" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b5c0e2e2b57a9424ad70">{"x":{"data":[{"x":[1,2,3,4,5,6,7],"y":[0.0998084523505132,0.093484754605395,0.0976869826803627,0.0983680284532243,0.101574684744414,0.108911025989817,0.106444154869953],"text":["Year: 2008<br />ratio: 0.09980845<br />Personal.Income: [75k,inf)","Year: 2009<br />ratio: 0.09348475<br />Personal.Income: [75k,inf)","Year: 2010<br />ratio: 0.09768698<br />Personal.Income: [75k,inf)","Year: 2011<br />ratio: 0.09836803<br />Personal.Income: [75k,inf)","Year: 2012<br />ratio: 0.10157468<br />Personal.Income: [75k,inf)","Year: 2013<br />ratio: 0.10891103<br />Personal.Income: [75k,inf)","Year: 2014<br />ratio: 0.10644415<br />Personal.Income: [75k,inf)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"[75k,inf)","legendgroup":"[75k,inf)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.194581686102277,0.204619224474904,0.193612095878813,0.187693053453939,0.195013259441215,0.211942461253333,0.211377577613827],"text":["Year: 2008<br />ratio: 0.19458169<br />Personal.Income: [75k,inf)","Year: 2009<br />ratio: 0.20461922<br />Personal.Income: [75k,inf)","Year: 2010<br />ratio: 0.19361210<br />Personal.Income: [75k,inf)","Year: 2011<br />ratio: 0.18769305<br />Personal.Income: [75k,inf)","Year: 2012<br />ratio: 0.19501326<br />Personal.Income: [75k,inf)","Year: 2013<br />ratio: 0.21194246<br />Personal.Income: [75k,inf)","Year: 2014<br />ratio: 0.21137758<br />Personal.Income: [75k,inf)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"[75k,inf)","legendgroup":"[75k,inf)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.123050638613922,0.125207575337189,0.113808584412121,0.110629528733927,0.108535519150121,0.112785397123732,0.105019646015772],"text":["Year: 2008<br />ratio: 0.12305064<br />Personal.Income: [50k,75k)","Year: 2009<br />ratio: 0.12520758<br />Personal.Income: [50k,75k)","Year: 2010<br />ratio: 0.11380858<br />Personal.Income: [50k,75k)","Year: 2011<br />ratio: 0.11062953<br />Personal.Income: [50k,75k)","Year: 2012<br />ratio: 0.10853552<br />Personal.Income: [50k,75k)","Year: 2013<br />ratio: 0.11278540<br />Personal.Income: [50k,75k)","Year: 2014<br />ratio: 0.10501965<br />Personal.Income: [50k,75k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(205,150,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(205,150,0,1)"}},"hoveron":"points","name":"[50k,75k)","legendgroup":"[50k,75k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.163985637433712,0.153768934432852,0.149563386347988,0.14605868887977,0.13103659996739,0.12983706869365,0.134649351571235],"text":["Year: 2008<br />ratio: 0.16398564<br />Personal.Income: [50k,75k)","Year: 2009<br />ratio: 0.15376893<br />Personal.Income: [50k,75k)","Year: 2010<br />ratio: 0.14956339<br />Personal.Income: [50k,75k)","Year: 2011<br />ratio: 0.14605869<br />Personal.Income: [50k,75k)","Year: 2012<br />ratio: 0.13103660<br />Personal.Income: [50k,75k)","Year: 2013<br />ratio: 0.12983707<br />Personal.Income: [50k,75k)","Year: 2014<br />ratio: 0.13464935<br />Personal.Income: [50k,75k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(205,150,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(205,150,0,1)"}},"hoveron":"points","name":"[50k,75k)","legendgroup":"[50k,75k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.130554358281282,0.120055479271175,0.11923988747404,0.122214325760174,0.115909184924975,0.11959963205212,0.117919832762953],"text":["Year: 2008<br />ratio: 0.13055436<br />Personal.Income: [35k,50k)","Year: 2009<br />ratio: 0.12005548<br />Personal.Income: [35k,50k)","Year: 2010<br />ratio: 0.11923989<br />Personal.Income: [35k,50k)","Year: 2011<br />ratio: 0.12221433<br />Personal.Income: [35k,50k)","Year: 2012<br />ratio: 0.11590918<br />Personal.Income: [35k,50k)","Year: 2013<br />ratio: 0.11959963<br />Personal.Income: [35k,50k)","Year: 2014<br />ratio: 0.11791983<br />Personal.Income: [35k,50k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)"}},"hoveron":"points","name":"[35k,50k)","legendgroup":"[35k,50k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.146560964498566,0.143240485819985,0.141099232632815,0.131886553461721,0.132539055263147,0.132363703674201,0.128805115917892],"text":["Year: 2008<br />ratio: 0.14656096<br />Personal.Income: [35k,50k)","Year: 2009<br />ratio: 0.14324049<br />Personal.Income: [35k,50k)","Year: 2010<br />ratio: 0.14109923<br />Personal.Income: [35k,50k)","Year: 2011<br />ratio: 0.13188655<br />Personal.Income: [35k,50k)","Year: 2012<br />ratio: 0.13253906<br />Personal.Income: [35k,50k)","Year: 2013<br />ratio: 0.13236370<br />Personal.Income: [35k,50k)","Year: 2014<br />ratio: 0.12880512<br />Personal.Income: [35k,50k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)"}},"hoveron":"points","name":"[35k,50k)","legendgroup":"[35k,50k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.117267097685405,0.115993049261794,0.123984992235897,0.110899255588242,0.11022569605549,0.109220441728943,0.119674573660732],"text":["Year: 2008<br />ratio: 0.11726710<br />Personal.Income: [25k,35k)","Year: 2009<br />ratio: 0.11599305<br />Personal.Income: [25k,35k)","Year: 2010<br />ratio: 0.12398499<br />Personal.Income: [25k,35k)","Year: 2011<br />ratio: 0.11089926<br />Personal.Income: [25k,35k)","Year: 2012<br />ratio: 0.11022570<br />Personal.Income: [25k,35k)","Year: 2013<br />ratio: 0.10922044<br />Personal.Income: [25k,35k)","Year: 2014<br />ratio: 0.11967457<br />Personal.Income: [25k,35k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,190,103,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,190,103,1)"}},"hoveron":"points","name":"[25k,35k)","legendgroup":"[25k,35k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.128430916005577,0.124493001564789,0.1160570519947,0.118721244690004,0.114154081415501,0.127395479133801,0.118279816447267],"text":["Year: 2008<br />ratio: 0.12843092<br />Personal.Income: [25k,35k)","Year: 2009<br />ratio: 0.12449300<br />Personal.Income: [25k,35k)","Year: 2010<br />ratio: 0.11605705<br />Personal.Income: [25k,35k)","Year: 2011<br />ratio: 0.11872124<br />Personal.Income: [25k,35k)","Year: 2012<br />ratio: 0.11415408<br />Personal.Income: [25k,35k)","Year: 2013<br />ratio: 0.12739548<br />Personal.Income: [25k,35k)","Year: 2014<br />ratio: 0.11827982<br />Personal.Income: [25k,35k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,190,103,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,190,103,1)"}},"hoveron":"points","name":"[25k,35k)","legendgroup":"[25k,35k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.15401375850775,0.17386323437426,0.158178633934379,0.151176843271899,0.159061383021423,0.158264631562357,0.143445333145936],"text":["Year: 2008<br />ratio: 0.15401376<br />Personal.Income: [15k,25k)","Year: 2009<br />ratio: 0.17386323<br />Personal.Income: [15k,25k)","Year: 2010<br />ratio: 0.15817863<br />Personal.Income: [15k,25k)","Year: 2011<br />ratio: 0.15117684<br />Personal.Income: [15k,25k)","Year: 2012<br />ratio: 0.15906138<br />Personal.Income: [15k,25k)","Year: 2013<br />ratio: 0.15826463<br />Personal.Income: [15k,25k)","Year: 2014<br />ratio: 0.14344533<br />Personal.Income: [15k,25k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"[15k,25k)","legendgroup":"[15k,25k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.152919821288,0.147864474585679,0.151559720498612,0.153829724390765,0.150686607586737,0.146063434699291,0.155573090985954],"text":["Year: 2008<br />ratio: 0.15291982<br />Personal.Income: [15k,25k)","Year: 2009<br />ratio: 0.14786447<br />Personal.Income: [15k,25k)","Year: 2010<br />ratio: 0.15155972<br />Personal.Income: [15k,25k)","Year: 2011<br />ratio: 0.15382972<br />Personal.Income: [15k,25k)","Year: 2012<br />ratio: 0.15068661<br />Personal.Income: [15k,25k)","Year: 2013<br />ratio: 0.14606343<br />Personal.Income: [15k,25k)","Year: 2014<br />ratio: 0.15557309<br />Personal.Income: [15k,25k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"[15k,25k)","legendgroup":"[15k,25k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0930161814661943,0.0967417578949418,0.102677640232793,0.106671339641468,0.0976025221192271,0.0957156092829509,0.0969346798455696],"text":["Year: 2008<br />ratio: 0.09301618<br />Personal.Income: [10k,15k)","Year: 2009<br />ratio: 0.09674176<br />Personal.Income: [10k,15k)","Year: 2010<br />ratio: 0.10267764<br />Personal.Income: [10k,15k)","Year: 2011<br />ratio: 0.10667134<br />Personal.Income: [10k,15k)","Year: 2012<br />ratio: 0.09760252<br />Personal.Income: [10k,15k)","Year: 2013<br />ratio: 0.09571561<br />Personal.Income: [10k,15k)","Year: 2014<br />ratio: 0.09693468<br />Personal.Income: [10k,15k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,169,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,169,255,1)"}},"hoveron":"points","name":"[10k,15k)","legendgroup":"[10k,15k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0776405341129013,0.0782453243829881,0.0792006410763188,0.0871286061573239,0.0830870484870376,0.0812789594891481,0.0716066679967589],"text":["Year: 2008<br />ratio: 0.07764053<br />Personal.Income: [10k,15k)","Year: 2009<br />ratio: 0.07824532<br />Personal.Income: [10k,15k)","Year: 2010<br />ratio: 0.07920064<br />Personal.Income: [10k,15k)","Year: 2011<br />ratio: 0.08712861<br />Personal.Income: [10k,15k)","Year: 2012<br />ratio: 0.08308705<br />Personal.Income: [10k,15k)","Year: 2013<br />ratio: 0.08127896<br />Personal.Income: [10k,15k)","Year: 2014<br />ratio: 0.07160667<br />Personal.Income: [10k,15k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,169,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,169,255,1)"}},"hoveron":"points","name":"[10k,15k)","legendgroup":"[10k,15k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0928018896640733,0.0972613721789172,0.100898042589278,0.0980466659909179,0.104891870045045,0.096735180633981,0.0969336733195293],"text":["Year: 2008<br />ratio: 0.09280189<br />Personal.Income: [5k,10k)","Year: 2009<br />ratio: 0.09726137<br />Personal.Income: [5k,10k)","Year: 2010<br />ratio: 0.10089804<br />Personal.Income: [5k,10k)","Year: 2011<br />ratio: 0.09804667<br />Personal.Income: [5k,10k)","Year: 2012<br />ratio: 0.10489187<br />Personal.Income: [5k,10k)","Year: 2013<br />ratio: 0.09673518<br />Personal.Income: [5k,10k)","Year: 2014<br />ratio: 0.09693367<br />Personal.Income: [5k,10k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)"}},"hoveron":"points","name":"[5k,10k)","legendgroup":"[5k,10k)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.055498244418682,0.0681885043278962,0.0654458549592216,0.0617078302611371,0.0744392893525954,0.0637089111616242,0.0649176392636911],"text":["Year: 2008<br />ratio: 0.05549824<br />Personal.Income: [5k,10k)","Year: 2009<br />ratio: 0.06818850<br />Personal.Income: [5k,10k)","Year: 2010<br />ratio: 0.06544585<br />Personal.Income: [5k,10k)","Year: 2011<br />ratio: 0.06170783<br />Personal.Income: [5k,10k)","Year: 2012<br />ratio: 0.07443929<br />Personal.Income: [5k,10k)","Year: 2013<br />ratio: 0.06370891<br />Personal.Income: [5k,10k)","Year: 2014<br />ratio: 0.06491764<br />Personal.Income: [5k,10k)"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)"}},"hoveron":"points","name":"[5k,10k)","legendgroup":"[5k,10k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.18948762343086,0.177392777076329,0.183525236441129,0.201994012560147,0.202199139939306,0.1987680816261,0.213628106379554],"text":["Year: 2008<br />ratio: 0.18948762<br />Personal.Income: No Income","Year: 2009<br />ratio: 0.17739278<br />Personal.Income: No Income","Year: 2010<br />ratio: 0.18352524<br />Personal.Income: No Income","Year: 2011<br />ratio: 0.20199401<br />Personal.Income: No Income","Year: 2012<br />ratio: 0.20219914<br />Personal.Income: No Income","Year: 2013<br />ratio: 0.19876808<br />Personal.Income: No Income","Year: 2014<br />ratio: 0.21362811<br />Personal.Income: No Income"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,97,204,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,97,204,1)"}},"hoveron":"points","name":"No Income","legendgroup":"No Income","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0803821961402861,0.0795800504109065,0.10346201661153,0.11297429870534,0.119044058486376,0.107409981894952,0.114790740203374],"text":["Year: 2008<br />ratio: 0.08038220<br />Personal.Income: No Income","Year: 2009<br />ratio: 0.07958005<br />Personal.Income: No Income","Year: 2010<br />ratio: 0.10346202<br />Personal.Income: No Income","Year: 2011<br />ratio: 0.11297430<br />Personal.Income: No Income","Year: 2012<br />ratio: 0.11904406<br />Personal.Income: No Income","Year: 2013<br />ratio: 0.10740998<br />Personal.Income: No Income","Year: 2014<br />ratio: 0.11479074<br />Personal.Income: No Income"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,97,204,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,97,204,1)"}},"hoveron":"points","name":"No Income","legendgroup":"No Income","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0998084523505132,0.093484754605395,0.0976869826803627,0.0983680284532243,0.101574684744414,0.108911025989817,0.106444154869953],"text":["Year: 2008<br />ratio: 0.09980845<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2009<br />ratio: 0.09348475<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2010<br />ratio: 0.09768698<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2011<br />ratio: 0.09836803<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2012<br />ratio: 0.10157468<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2013<br />ratio: 0.10891103<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2014<br />ratio: 0.10644415<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"[75k,inf)","legendgroup":"[75k,inf)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.194581686102277,0.204619224474904,0.193612095878813,0.187693053453939,0.195013259441215,0.211942461253333,0.211377577613827],"text":["Year: 2008<br />ratio: 0.19458169<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2009<br />ratio: 0.20461922<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2010<br />ratio: 0.19361210<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2011<br />ratio: 0.18769305<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2012<br />ratio: 0.19501326<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2013<br />ratio: 0.21194246<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)","Year: 2014<br />ratio: 0.21137758<br />Personal.Income: [75k,inf)<br />Personal.Income: [75k,inf)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"[75k,inf)","legendgroup":"[75k,inf)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.123050638613922,0.125207575337189,0.113808584412121,0.110629528733927,0.108535519150121,0.112785397123732,0.105019646015772],"text":["Year: 2008<br />ratio: 0.12305064<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2009<br />ratio: 0.12520758<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2010<br />ratio: 0.11380858<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2011<br />ratio: 0.11062953<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2012<br />ratio: 0.10853552<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2013<br />ratio: 0.11278540<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2014<br />ratio: 0.10501965<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(205,150,0,1)","dash":"solid"},"hoveron":"points","name":"[50k,75k)","legendgroup":"[50k,75k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.163985637433712,0.153768934432852,0.149563386347988,0.14605868887977,0.13103659996739,0.12983706869365,0.134649351571235],"text":["Year: 2008<br />ratio: 0.16398564<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2009<br />ratio: 0.15376893<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2010<br />ratio: 0.14956339<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2011<br />ratio: 0.14605869<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2012<br />ratio: 0.13103660<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2013<br />ratio: 0.12983707<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)","Year: 2014<br />ratio: 0.13464935<br />Personal.Income: [50k,75k)<br />Personal.Income: [50k,75k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(205,150,0,1)","dash":"solid"},"hoveron":"points","name":"[50k,75k)","legendgroup":"[50k,75k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.130554358281282,0.120055479271175,0.11923988747404,0.122214325760174,0.115909184924975,0.11959963205212,0.117919832762953],"text":["Year: 2008<br />ratio: 0.13055436<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2009<br />ratio: 0.12005548<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2010<br />ratio: 0.11923989<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2011<br />ratio: 0.12221433<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2012<br />ratio: 0.11590918<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2013<br />ratio: 0.11959963<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2014<br />ratio: 0.11791983<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)","dash":"solid"},"hoveron":"points","name":"[35k,50k)","legendgroup":"[35k,50k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.146560964498566,0.143240485819985,0.141099232632815,0.131886553461721,0.132539055263147,0.132363703674201,0.128805115917892],"text":["Year: 2008<br />ratio: 0.14656096<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2009<br />ratio: 0.14324049<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2010<br />ratio: 0.14109923<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2011<br />ratio: 0.13188655<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2012<br />ratio: 0.13253906<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2013<br />ratio: 0.13236370<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)","Year: 2014<br />ratio: 0.12880512<br />Personal.Income: [35k,50k)<br />Personal.Income: [35k,50k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)","dash":"solid"},"hoveron":"points","name":"[35k,50k)","legendgroup":"[35k,50k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.117267097685405,0.115993049261794,0.123984992235897,0.110899255588242,0.11022569605549,0.109220441728943,0.119674573660732],"text":["Year: 2008<br />ratio: 0.11726710<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2009<br />ratio: 0.11599305<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2010<br />ratio: 0.12398499<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2011<br />ratio: 0.11089926<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2012<br />ratio: 0.11022570<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2013<br />ratio: 0.10922044<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2014<br />ratio: 0.11967457<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,190,103,1)","dash":"solid"},"hoveron":"points","name":"[25k,35k)","legendgroup":"[25k,35k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.128430916005577,0.124493001564789,0.1160570519947,0.118721244690004,0.114154081415501,0.127395479133801,0.118279816447267],"text":["Year: 2008<br />ratio: 0.12843092<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2009<br />ratio: 0.12449300<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2010<br />ratio: 0.11605705<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2011<br />ratio: 0.11872124<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2012<br />ratio: 0.11415408<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2013<br />ratio: 0.12739548<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)","Year: 2014<br />ratio: 0.11827982<br />Personal.Income: [25k,35k)<br />Personal.Income: [25k,35k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,190,103,1)","dash":"solid"},"hoveron":"points","name":"[25k,35k)","legendgroup":"[25k,35k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.15401375850775,0.17386323437426,0.158178633934379,0.151176843271899,0.159061383021423,0.158264631562357,0.143445333145936],"text":["Year: 2008<br />ratio: 0.15401376<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2009<br />ratio: 0.17386323<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2010<br />ratio: 0.15817863<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2011<br />ratio: 0.15117684<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2012<br />ratio: 0.15906138<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2013<br />ratio: 0.15826463<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2014<br />ratio: 0.14344533<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"[15k,25k)","legendgroup":"[15k,25k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.152919821288,0.147864474585679,0.151559720498612,0.153829724390765,0.150686607586737,0.146063434699291,0.155573090985954],"text":["Year: 2008<br />ratio: 0.15291982<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2009<br />ratio: 0.14786447<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2010<br />ratio: 0.15155972<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2011<br />ratio: 0.15382972<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2012<br />ratio: 0.15068661<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2013<br />ratio: 0.14606343<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)","Year: 2014<br />ratio: 0.15557309<br />Personal.Income: [15k,25k)<br />Personal.Income: [15k,25k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"[15k,25k)","legendgroup":"[15k,25k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0930161814661943,0.0967417578949418,0.102677640232793,0.106671339641468,0.0976025221192271,0.0957156092829509,0.0969346798455696],"text":["Year: 2008<br />ratio: 0.09301618<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2009<br />ratio: 0.09674176<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2010<br />ratio: 0.10267764<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2011<br />ratio: 0.10667134<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2012<br />ratio: 0.09760252<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2013<br />ratio: 0.09571561<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2014<br />ratio: 0.09693468<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,169,255,1)","dash":"solid"},"hoveron":"points","name":"[10k,15k)","legendgroup":"[10k,15k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0776405341129013,0.0782453243829881,0.0792006410763188,0.0871286061573239,0.0830870484870376,0.0812789594891481,0.0716066679967589],"text":["Year: 2008<br />ratio: 0.07764053<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2009<br />ratio: 0.07824532<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2010<br />ratio: 0.07920064<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2011<br />ratio: 0.08712861<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2012<br />ratio: 0.08308705<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2013<br />ratio: 0.08127896<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)","Year: 2014<br />ratio: 0.07160667<br />Personal.Income: [10k,15k)<br />Personal.Income: [10k,15k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,169,255,1)","dash":"solid"},"hoveron":"points","name":"[10k,15k)","legendgroup":"[10k,15k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0928018896640733,0.0972613721789172,0.100898042589278,0.0980466659909179,0.104891870045045,0.096735180633981,0.0969336733195293],"text":["Year: 2008<br />ratio: 0.09280189<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2009<br />ratio: 0.09726137<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2010<br />ratio: 0.10089804<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2011<br />ratio: 0.09804667<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2012<br />ratio: 0.10489187<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2013<br />ratio: 0.09673518<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2014<br />ratio: 0.09693367<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)","dash":"solid"},"hoveron":"points","name":"[5k,10k)","legendgroup":"[5k,10k)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.055498244418682,0.0681885043278962,0.0654458549592216,0.0617078302611371,0.0744392893525954,0.0637089111616242,0.0649176392636911],"text":["Year: 2008<br />ratio: 0.05549824<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2009<br />ratio: 0.06818850<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2010<br />ratio: 0.06544585<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2011<br />ratio: 0.06170783<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2012<br />ratio: 0.07443929<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2013<br />ratio: 0.06370891<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)","Year: 2014<br />ratio: 0.06491764<br />Personal.Income: [5k,10k)<br />Personal.Income: [5k,10k)"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)","dash":"solid"},"hoveron":"points","name":"[5k,10k)","legendgroup":"[5k,10k)","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.18948762343086,0.177392777076329,0.183525236441129,0.201994012560147,0.202199139939306,0.1987680816261,0.213628106379554],"text":["Year: 2008<br />ratio: 0.18948762<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2009<br />ratio: 0.17739278<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2010<br />ratio: 0.18352524<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2011<br />ratio: 0.20199401<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2012<br />ratio: 0.20219914<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2013<br />ratio: 0.19876808<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2014<br />ratio: 0.21362811<br />Personal.Income: No Income<br />Personal.Income: No Income"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,97,204,1)","dash":"solid"},"hoveron":"points","name":"No Income","legendgroup":"No Income","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1,2,3,4,5,6,7],"y":[0.0803821961402861,0.0795800504109065,0.10346201661153,0.11297429870534,0.119044058486376,0.107409981894952,0.114790740203374],"text":["Year: 2008<br />ratio: 0.08038220<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2009<br />ratio: 0.07958005<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2010<br />ratio: 0.10346202<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2011<br />ratio: 0.11297430<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2012<br />ratio: 0.11904406<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2013<br />ratio: 0.10740998<br />Personal.Income: No Income<br />Personal.Income: No Income","Year: 2014<br />ratio: 0.11479074<br />Personal.Income: No Income<br />Personal.Income: No Income"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,97,204,1)","dash":"solid"},"hoveron":"points","name":"No Income","legendgroup":"No Income","showlegend":false,"xaxis":"x2","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":37.9178082191781,"r":18.9954337899543,"b":40.1826484018265,"l":48.9497716894977},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,0.495923026744945],"automargin":true,"type":"linear","autorange":false,"range":[0.4,7.6],"tickmode":"array","ticktext":["2008","2009","2010","2011","2012","2013","2014"],"tickvals":[1,2,3,4,5,6,7],"categoryorder":"array","categoryarray":["2008","2009","2010","2011","2012","2013","2014"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"annotations":[{"text":"Year","x":0.5,"y":0,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis","yshift":-21.9178082191781},{"text":"ratio","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-33.6073059360731},{"text":"Female","x":0.247961513372472,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Male","x":0.752038486627528,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":11.689497716895},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.0475917513206384,0.221534599477598],"tickmode":"array","ticktext":["0.05","0.10","0.15","0.20"],"tickvals":[0.05,0.1,0.15,0.2],"categoryorder":"array","categoryarray":["0.05","0.10","0.15","0.20"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":0.495923026744945,"y0":0,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":0.495923026744945,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":1,"y0":0,"y1":1},{"type":"rect","fillcolor":"rgba(217,217,217,1)","line":{"color":"transparent","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0.504076973255055,"x1":1,"y0":0,"y1":23.37899543379,"yanchor":1,"ysizemode":"pixel"}],"xaxis2":{"type":"linear","autorange":false,"range":[0.4,7.6],"tickmode":"array","ticktext":["2008","2009","2010","2011","2012","2013","2014"],"tickvals":[1,2,3,4,5,6,7],"categoryorder":"array","categoryarray":["2008","2009","2010","2011","2012","2013","2014"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0.504076973255055,1],"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"","hoverformat":".2f"},"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"Personal.Income","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"cc8703d19b3":{"x":{},"y":{},"colour":{},"type":"scatter"},"cc81d4c46bf":{"x":{},"y":{},"colour":{}}},"cur_data":"cc8703d19b3","visdat":{"cc8703d19b3":["function (y) ","x"],"cc81d4c46bf":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="interactive-choices-for-users-bar-plots" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> interactive choices for users, bar plots</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="interactive-component.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#total</span></span>
+<span id="cb4-2"><a href="interactive-component.html#cb4-2" aria-hidden="true" tabindex="-1"></a>n1<span class="ot">&lt;-</span><span class="fu">nPlot</span>(ratio <span class="sc">~</span> Year, <span class="at">group =</span> <span class="st">&#39;Personal.Income&#39;</span>, <span class="at">data =</span> data_inter, <span class="at">type =</span> <span class="st">&#39;multiBarChart&#39;</span>)</span>
+<span id="cb4-3"><a href="interactive-component.html#cb4-3" aria-hidden="true" tabindex="-1"></a>n1 <span class="sc">$</span> <span class="fu">yAxis</span>(<span class="at">tickFormat =</span> <span class="st">&quot;#! function(d) {return  d3.format(&#39;,.2f&#39;)(d)} !#&quot;</span>)</span>
+<span id="cb4-4"><a href="interactive-component.html#cb4-4" aria-hidden="true" tabindex="-1"></a>n1<span class="sc">$</span><span class="fu">print</span>(<span class="st">&#39;inline&#39;</span>, <span class="at">include_assets =</span> F, <span class="at">cdn =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## 
+## &lt;div id = &#39;inline&#39; class = &#39;rChart nvd3&#39;&gt;&lt;/div&gt;
+## &lt;script type=&#39;text/javascript&#39;&gt;
+##  $(document).ready(function(){
+##       drawinline()
+##     });
+##     function drawinline(){  
+##       var opts = {
+##  &quot;dom&quot;: &quot;inline&quot;,
+## &quot;width&quot;:      800,
+## &quot;height&quot;:      400,
+## &quot;x&quot;: &quot;Year&quot;,
+## &quot;y&quot;: &quot;ratio&quot;,
+## &quot;group&quot;: &quot;Personal.Income&quot;,
+## &quot;type&quot;: &quot;multiBarChart&quot;,
+## &quot;id&quot;: &quot;inline&quot; 
+## },
+##         data = [
+##  {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.1328750003925 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.0734457745864 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.08503806571889 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1534461363739 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.1230597796255 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1388598659577 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1442909903985 
+## },
+## {
+##  &quot;Year&quot;: &quot;2008&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.1489843869466 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.1264817334241 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.08212908730435 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.08711445512933 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1603310076424 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.1204172326732 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1321231612664 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1400736224178 
+## },
+## {
+##  &quot;Year&quot;: &quot;2009&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.1513297001425 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.1421173338886 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.08256252306128 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.09053556931225 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1547553976077 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.1198847402394 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1305453238045 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1323006130552 
+## },
+## {
+##  &quot;Year&quot;: &quot;2010&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.147298499031 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.1561693017081 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.07934051015295 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.09661131953591 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1525424678615 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.1149257837959 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1271933019726 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1288674105369 
+## },
+## {
+##  &quot;Year&quot;: &quot;2011&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.1443499044362 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.159636312384 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.08930475356364 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.09017279455122 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1547747643757 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.112236435336 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1244211638817 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1200526700674 
+## },
+## {
+##  &quot;Year&quot;: &quot;2012&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.1494011058404 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.1521399596291 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.07987895303516 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.08834730948474 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1520372811959 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.1184967715115 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1261142672134 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1214883739211 
+## },
+## {
+##  &quot;Year&quot;: &quot;2013&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.1614970840091 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;No Income&quot;,
+## &quot;ratio&quot;: 0.1632038548276 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[5k,10k)&quot;,
+## &quot;ratio&quot;: 0.08059992610039 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[10k,15k)&quot;,
+## &quot;ratio&quot;: 0.08401298747167 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[15k,25k)&quot;,
+## &quot;ratio&quot;: 0.1496325995184 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[25k,35k)&quot;,
+## &quot;ratio&quot;: 0.118963004835 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[35k,50k)&quot;,
+## &quot;ratio&quot;: 0.1234732208919 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[50k,75k)&quot;,
+## &quot;ratio&quot;: 0.1201359505486 
+## },
+## {
+##  &quot;Year&quot;: &quot;2014&quot;,
+## &quot;Personal.Income&quot;: &quot;[75k,inf)&quot;,
+## &quot;ratio&quot;: 0.1599784558064 
+## } 
+## ]
+##   
+##       if(!(opts.type===&quot;pieChart&quot; || opts.type===&quot;sparklinePlus&quot; || opts.type===&quot;bulletChart&quot;)) {
+##         var data = d3.nest()
+##           .key(function(d){
+##             //return opts.group === undefined ? &#39;main&#39; : d[opts.group]
+##             //instead of main would think a better default is opts.x
+##             return opts.group === undefined ? opts.y : d[opts.group];
+##           })
+##           .entries(data);
+##       }
+##       
+##       if (opts.disabled != undefined){
+##         data.map(function(d, i){
+##           d.disabled = opts.disabled[i]
+##         })
+##       }
+##       
+##       nv.addGraph(function() {
+##         var chart = nv.models[opts.type]()
+##           .width(opts.width)
+##           .height(opts.height)
+##           
+##         if (opts.type != &quot;bulletChart&quot;){
+##           chart
+##             .x(function(d) { return d[opts.x] })
+##             .y(function(d) { return d[opts.y] })
+##         }
+##           
+##          
+##         
+##           
+##         
+## 
+##         
+##         
+##         chart.yAxis
+##   .tickFormat( function(d) {return  d3.format(&#39;,.2f&#39;)(d)} )
+##       
+##        d3.select(&quot;#&quot; + opts.id)
+##         .append(&#39;svg&#39;)
+##         .datum(data)
+##         .transition().duration(500)
+##         .call(chart);
+## 
+##        nv.utils.windowResize(chart.update);
+##        return chart;
+##       });
+##     };
+## &lt;/script&gt;</code></pre>
 
+</div>
 </div>
             </section>
 
