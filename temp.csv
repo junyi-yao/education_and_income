@@ -1,0 +1,449 @@
+Year,Gender,Education,Income,Population
+2008,Male,< high school,No Income,261172
+2008,Male,< high school,"[5k,10k)",163263
+2008,Male,< high school,"[10k,15k)",317119
+2008,Male,< high school,"[15k,25k)",573769
+2008,Male,< high school,"[25k,35k)",333713
+2008,Male,< high school,"[35k,50k)",222761
+2008,Male,< high school,"[50k,75k)",109200
+2008,Male,< high school,"[75k,inf)",44291
+2008,Male,High school or equivalent,No Income,296555
+2008,Male,High school or equivalent,"[5k,10k)",187833
+2008,Male,High school or equivalent,"[10k,15k)",229724
+2008,Male,High school or equivalent,"[15k,25k)",501296
+2008,Male,High school or equivalent,"[25k,35k)",433340
+2008,Male,High school or equivalent,"[35k,50k)",472466
+2008,Male,High school or equivalent,"[50k,75k)",424046
+2008,Male,High school or equivalent,"[75k,inf)",175104
+2008,Male,College (<4year),No Income,237810
+2008,Male,College (<4year),"[5k,10k)",211318
+2008,Male,College (<4year),"[10k,15k)",224732
+2008,Male,College (<4year),"[15k,25k)",416638
+2008,Male,College (<4year),"[25k,35k)",418686
+2008,Male,College (<4year),"[35k,50k)",539958
+2008,Male,College (<4year),"[50k,75k)",591795
+2008,Male,College (<4year),"[75k,inf)",478470
+2008,Male,>=Bachelor,No Income,94464
+2008,Male,>=Bachelor,"[5k,10k)",52069
+2008,Male,>=Bachelor,"[10k,15k)",88070
+2008,Male,>=Bachelor,"[15k,25k)",201443
+2008,Male,>=Bachelor,"[25k,35k)",236263
+2008,Male,>=Bachelor,"[35k,50k)",387555
+2008,Male,>=Bachelor,"[50k,75k)",690627
+2008,Male,>=Bachelor,"[75k,inf)",1456566
+2008,Female,< high school,No Income,740143
+2008,Female,< high school,"[5k,10k)",252509
+2008,Female,< high school,"[10k,15k)",229721
+2008,Female,< high school,"[15k,25k)",317043
+2008,Female,< high school,"[25k,35k)",93849
+2008,Female,< high school,"[35k,50k)",51599
+2008,Female,< high school,"[50k,75k)",15192
+2008,Female,< high school,"[75k,inf)",4233
+2008,Female,High school or equivalent,No Income,528876
+2008,Female,High school or equivalent,"[5k,10k)",241389
+2008,Female,High school or equivalent,"[10k,15k)",241913
+2008,Female,High school or equivalent,"[15k,25k)",420710
+2008,Female,High school or equivalent,"[25k,35k)",293265
+2008,Female,High school or equivalent,"[35k,50k)",249327
+2008,Female,High school or equivalent,"[50k,75k)",131571
+2008,Female,High school or equivalent,"[75k,inf)",59350
+2008,Female,College (<4year),No Income,451575
+2008,Female,College (<4year),"[5k,10k)",327251
+2008,Female,College (<4year),"[10k,15k)",334679
+2008,Female,College (<4year),"[15k,25k)",497615
+2008,Female,College (<4year),"[25k,35k)",496456
+2008,Female,College (<4year),"[35k,50k)",536363
+2008,Female,College (<4year),"[50k,75k)",345723
+2008,Female,College (<4year),"[75k,inf)",179877
+2008,Female,>=Bachelor,No Income,224757
+2008,Female,>=Bachelor,"[5k,10k)",131590
+2008,Female,>=Bachelor,"[10k,15k)",148626
+2008,Female,>=Bachelor,"[15k,25k)",345795
+2008,Female,>=Bachelor,"[25k,35k)",320338
+2008,Female,>=Bachelor,"[35k,50k)",503031
+2008,Female,>=Bachelor,"[50k,75k)",770798
+2008,Female,>=Bachelor,"[75k,inf)",781211
+2009,Male,< high school,No Income,280947
+2009,Male,< high school,"[5k,10k)",229865
+2009,Male,< high school,"[10k,15k)",278224
+2009,Male,< high school,"[15k,25k)",534542
+2009,Male,< high school,"[25k,35k)",307653
+2009,Male,< high school,"[35k,50k)",247159
+2009,Male,< high school,"[50k,75k)",79922
+2009,Male,< high school,"[75k,inf)",48803
+2009,Male,High school or equivalent,No Income,296927
+2009,Male,High school or equivalent,"[5k,10k)",216871
+2009,Male,High school or equivalent,"[10k,15k)",213345
+2009,Male,High school or equivalent,"[15k,25k)",503750
+2009,Male,High school or equivalent,"[25k,35k)",440200
+2009,Male,High school or equivalent,"[35k,50k)",481130
+2009,Male,High school or equivalent,"[50k,75k)",350784
+2009,Male,High school or equivalent,"[75k,inf)",190948
+2009,Male,College (<4year),No Income,212039
+2009,Male,College (<4year),"[5k,10k)",235730
+2009,Male,College (<4year),"[10k,15k)",288174
+2009,Male,College (<4year),"[15k,25k)",392488
+2009,Male,College (<4year),"[25k,35k)",375408
+2009,Male,College (<4year),"[35k,50k)",486983
+2009,Male,College (<4year),"[50k,75k)",584200
+2009,Male,College (<4year),"[75k,inf)",521502
+2009,Male,>=Bachelor,No Income,88688
+2009,Male,>=Bachelor,"[5k,10k)",70367
+2009,Male,>=Bachelor,"[10k,15k)",84122
+2009,Male,>=Bachelor,"[15k,25k)",201713
+2009,Male,>=Bachelor,"[25k,35k)",251200
+2009,Male,>=Bachelor,"[35k,50k)",366170
+2009,Male,>=Bachelor,"[50k,75k)",682775
+2009,Male,>=Bachelor,"[75k,inf)",1497839
+2009,Female,< high school,No Income,654156
+2009,Female,< high school,"[5k,10k)",248027
+2009,Female,< high school,"[10k,15k)",255296
+2009,Female,< high school,"[15k,25k)",359624
+2009,Female,< high school,"[25k,35k)",86580
+2009,Female,< high school,"[35k,50k)",30741
+2009,Female,< high school,"[50k,75k)",24592
+2009,Female,< high school,"[75k,inf)",10943
+2009,Female,High school or equivalent,No Income,519946
+2009,Female,High school or equivalent,"[5k,10k)",234527
+2009,Female,High school or equivalent,"[10k,15k)",221787
+2009,Female,High school or equivalent,"[15k,25k)",450205
+2009,Female,High school or equivalent,"[25k,35k)",318602
+2009,Female,High school or equivalent,"[35k,50k)",234705
+2009,Female,High school or equivalent,"[50k,75k)",134763
+2009,Female,High school or equivalent,"[75k,inf)",57292
+2009,Female,College (<4year),No Income,387007
+2009,Female,College (<4year),"[5k,10k)",345944
+2009,Female,College (<4year),"[10k,15k)",370518
+2009,Female,College (<4year),"[15k,25k)",647024
+2009,Female,College (<4year),"[25k,35k)",454455
+2009,Female,College (<4year),"[35k,50k)",459975
+2009,Female,College (<4year),"[50k,75k)",347119
+2009,Female,College (<4year),"[75k,inf)",200198
+2009,Female,>=Bachelor,No Income,243154
+2009,Female,>=Bachelor,"[5k,10k)",160748
+2009,Female,>=Bachelor,"[10k,15k)",136360
+2009,Female,>=Bachelor,"[15k,25k)",311511
+2009,Female,>=Bachelor,"[25k,35k)",320129
+2009,Female,>=Bachelor,"[35k,50k)",495664
+2009,Female,>=Bachelor,"[50k,75k)",767013
+2009,Female,>=Bachelor,"[75k,inf)",682401
+2010,Male,< high school,No Income,369566
+2010,Male,< high school,"[5k,10k)",226209
+2010,Male,< high school,"[10k,15k)",295536
+2010,Male,< high school,"[15k,25k)",535027
+2010,Male,< high school,"[25k,35k)",244978
+2010,Male,< high school,"[35k,50k)",192622
+2010,Male,< high school,"[50k,75k)",93885
+2010,Male,< high school,"[75k,inf)",38266
+2010,Male,High school or equivalent,No Income,345253
+2010,Male,High school or equivalent,"[5k,10k)",190829
+2010,Male,High school or equivalent,"[10k,15k)",209509
+2010,Male,High school or equivalent,"[15k,25k)",533513
+2010,Male,High school or equivalent,"[25k,35k)",412122
+2010,Male,High school or equivalent,"[35k,50k)",470369
+2010,Male,High school or equivalent,"[50k,75k)",339017
+2010,Male,High school or equivalent,"[75k,inf)",215851
+2010,Male,College (<4year),No Income,310460
+2010,Male,College (<4year),"[5k,10k)",220408
+2010,Male,College (<4year),"[10k,15k)",234677
+2010,Male,College (<4year),"[15k,25k)",356706
+2010,Male,College (<4year),"[25k,35k)",374227
+2010,Male,College (<4year),"[35k,50k)",474116
+2010,Male,College (<4year),"[50k,75k)",581119
+2010,Male,College (<4year),"[75k,inf)",441967
+2010,Male,>=Bachelor,No Income,108052
+2010,Male,>=Bachelor,"[5k,10k)",79453
+2010,Male,>=Bachelor,"[10k,15k)",127848
+2010,Male,>=Bachelor,"[15k,25k)",234951
+2010,Male,>=Bachelor,"[25k,35k)",239971
+2010,Male,>=Bachelor,"[35k,50k)",408505
+2010,Male,>=Bachelor,"[50k,75k)",624308
+2010,Male,>=Bachelor,"[75k,inf)",1424758
+2010,Female,< high school,No Income,666858
+2010,Female,< high school,"[5k,10k)",236424
+2010,Female,< high school,"[10k,15k)",253247
+2010,Female,< high school,"[15k,25k)",287963
+2010,Female,< high school,"[25k,35k)",107504
+2010,Female,< high school,"[35k,50k)",35129
+2010,Female,< high school,"[50k,75k)",18515
+2010,Female,< high school,"[75k,inf)",15038
+2010,Female,High school or equivalent,No Income,496567
+2010,Female,High school or equivalent,"[5k,10k)",252271
+2010,Female,High school or equivalent,"[10k,15k)",276576
+2010,Female,High school or equivalent,"[15k,25k)",436288
+2010,Female,High school or equivalent,"[25k,35k)",363540
+2010,Female,High school or equivalent,"[35k,50k)",225261
+2010,Female,High school or equivalent,"[50k,75k)",136694
+2010,Female,High school or equivalent,"[75k,inf)",43721
+2010,Female,College (<4year),No Income,443607
+2010,Female,College (<4year),"[5k,10k)",374128
+2010,Female,College (<4year),"[10k,15k)",386929
+2010,Female,College (<4year),"[15k,25k)",567753
+2010,Female,College (<4year),"[25k,35k)",491109
+2010,Female,College (<4year),"[35k,50k)",442917
+2010,Female,College (<4year),"[50k,75k)",321434
+2010,Female,College (<4year),"[75k,inf)",184398
+2010,Female,>=Bachelor,No Income,269680
+2010,Female,>=Bachelor,"[5k,10k)",168951
+2010,Female,>=Bachelor,"[10k,15k)",133220
+2010,Female,>=Bachelor,"[15k,25k)",325516
+2010,Female,>=Bachelor,"[25k,35k)",305706
+2010,Female,>=Bachelor,"[35k,50k)",516029
+2010,Female,>=Bachelor,"[50k,75k)",687153
+2010,Female,>=Bachelor,"[75k,inf)",755781
+2011,Male,< high school,No Income,359401
+2011,Male,< high school,"[5k,10k)",177781
+2011,Male,< high school,"[10k,15k)",288850
+2011,Male,< high school,"[15k,25k)",546856
+2011,Male,< high school,"[25k,35k)",295383
+2011,Male,< high school,"[35k,50k)",175841
+2011,Male,< high school,"[50k,75k)",100776
+2011,Male,< high school,"[75k,inf)",38335
+2011,Male,High school or equivalent,No Income,450644
+2011,Male,High school or equivalent,"[5k,10k)",179616
+2011,Male,High school or equivalent,"[10k,15k)",264534
+2011,Male,High school or equivalent,"[15k,25k)",519889
+2011,Male,High school or equivalent,"[25k,35k)",422294
+2011,Male,High school or equivalent,"[35k,50k)",477882
+2011,Male,High school or equivalent,"[50k,75k)",387890
+2011,Male,High school or equivalent,"[75k,inf)",188373
+2011,Male,College (<4year),No Income,331991
+2011,Male,College (<4year),"[5k,10k)",231167
+2011,Male,College (<4year),"[10k,15k)",288293
+2011,Male,College (<4year),"[15k,25k)",412679
+2011,Male,College (<4year),"[25k,35k)",353200
+2011,Male,College (<4year),"[35k,50k)",480546
+2011,Male,College (<4year),"[50k,75k)",489968
+2011,Male,College (<4year),"[75k,inf)",462728
+2011,Male,>=Bachelor,No Income,113687
+2011,Male,>=Bachelor,"[5k,10k)",97326
+2011,Male,>=Bachelor,"[10k,15k)",126768
+2011,Male,>=Bachelor,"[15k,25k)",230412
+2011,Male,>=Bachelor,"[25k,35k)",248724
+2011,Male,>=Bachelor,"[35k,50k)",331666
+2011,Male,>=Bachelor,"[50k,75k)",644826
+2011,Male,>=Bachelor,"[75k,inf)",1396795
+2011,Female,< high school,No Income,748885
+2011,Female,< high school,"[5k,10k)",246973
+2011,Female,< high school,"[10k,15k)",273029
+2011,Female,< high school,"[15k,25k)",301428
+2011,Female,< high school,"[25k,35k)",91755
+2011,Female,< high school,"[35k,50k)",57985
+2011,Female,< high school,"[50k,75k)",18925
+2011,Female,< high school,"[75k,inf)",7168
+2011,Female,High school or equivalent,No Income,575559
+2011,Female,High school or equivalent,"[5k,10k)",291364
+2011,Female,High school or equivalent,"[10k,15k)",305265
+2011,Female,High school or equivalent,"[15k,25k)",425683
+2011,Female,High school or equivalent,"[25k,35k)",323001
+2011,Female,High school or equivalent,"[35k,50k)",311597
+2011,Female,High school or equivalent,"[50k,75k)",139946
+2011,Female,High school or equivalent,"[75k,inf)",51155
+2011,Female,College (<4year),No Income,525597
+2011,Female,College (<4year),"[5k,10k)",367713
+2011,Female,College (<4year),"[10k,15k)",368797
+2011,Female,College (<4year),"[15k,25k)",542492
+2011,Female,College (<4year),"[25k,35k)",460822
+2011,Female,College (<4year),"[35k,50k)",427109
+2011,Female,College (<4year),"[50k,75k)",323702
+2011,Female,College (<4year),"[75k,inf)",194826
+2011,Female,>=Bachelor,No Income,266304
+2011,Female,>=Bachelor,"[5k,10k)",121211
+2011,Female,>=Bachelor,"[10k,15k)",170533
+2011,Female,>=Bachelor,"[15k,25k)",314317
+2011,Female,>=Bachelor,"[25k,35k)",286343
+2011,Female,>=Bachelor,"[35k,50k)",483781
+2011,Female,>=Bachelor,"[50k,75k)",676522
+2011,Female,>=Bachelor,"[75k,inf)",777479
+2012,Male,< high school,No Income,357363
+2012,Male,< high school,"[5k,10k)",234399
+2012,Male,< high school,"[10k,15k)",296619
+2012,Male,< high school,"[15k,25k)",478466
+2012,Male,< high school,"[25k,35k)",285220
+2012,Male,< high school,"[35k,50k)",220388
+2012,Male,< high school,"[50k,75k)",85944
+2012,Male,< high school,"[75k,inf)",37162
+2012,Male,High school or equivalent,No Income,453889
+2012,Male,High school or equivalent,"[5k,10k)",223998
+2012,Male,High school or equivalent,"[10k,15k)",291838
+2012,Male,High school or equivalent,"[15k,25k)",533300
+2012,Male,High school or equivalent,"[25k,35k)",403456
+2012,Male,High school or equivalent,"[35k,50k)",430104
+2012,Male,High school or equivalent,"[50k,75k)",387094
+2012,Male,High school or equivalent,"[75k,inf)",168064
+2012,Male,College (<4year),No Income,385337
+2012,Male,College (<4year),"[5k,10k)",295051
+2012,Male,College (<4year),"[10k,15k)",254478
+2012,Male,College (<4year),"[15k,25k)",457806
+2012,Male,College (<4year),"[25k,35k)",366349
+2012,Male,College (<4year),"[35k,50k)",438565
+2012,Male,College (<4year),"[50k,75k)",449158
+2012,Male,College (<4year),"[75k,inf)",477728
+2012,Male,>=Bachelor,No Income,143162
+2012,Male,>=Bachelor,"[5k,10k)",84310
+2012,Male,>=Bachelor,"[10k,15k)",92147
+2012,Male,>=Bachelor,"[15k,25k)",226292
+2012,Male,>=Bachelor,"[25k,35k)",229693
+2012,Male,>=Bachelor,"[35k,50k)",402570
+2012,Male,>=Bachelor,"[50k,75k)",552522
+2012,Male,>=Bachelor,"[75k,inf)",1511773
+2012,Female,< high school,No Income,719609
+2012,Female,< high school,"[5k,10k)",279793
+2012,Female,< high school,"[10k,15k)",249688
+2012,Female,< high school,"[15k,25k)",335644
+2012,Female,< high school,"[25k,35k)",98037
+2012,Female,< high school,"[35k,50k)",31925
+2012,Female,< high school,"[50k,75k)",7581
+2012,Female,< high school,"[75k,inf)",4142
+2012,Female,High school or equivalent,No Income,569172
+2012,Female,High school or equivalent,"[5k,10k)",289183
+2012,Female,High school or equivalent,"[10k,15k)",285836
+2012,Female,High school or equivalent,"[15k,25k)",478261
+2012,Female,High school or equivalent,"[25k,35k)",317656
+2012,Female,High school or equivalent,"[35k,50k)",255299
+2012,Female,High school or equivalent,"[50k,75k)",132765
+2012,Female,High school or equivalent,"[75k,inf)",55907
+2012,Female,College (<4year),No Income,544361
+2012,Female,College (<4year),"[5k,10k)",375121
+2012,Female,College (<4year),"[10k,15k)",364362
+2012,Female,College (<4year),"[15k,25k)",609758
+2012,Female,College (<4year),"[25k,35k)",456854
+2012,Female,College (<4year),"[35k,50k)",471354
+2012,Female,College (<4year),"[50k,75k)",340166
+2012,Female,College (<4year),"[75k,inf)",200267
+2012,Female,>=Bachelor,No Income,337101
+2012,Female,>=Bachelor,"[5k,10k)",181728
+2012,Female,>=Bachelor,"[10k,15k)",147701
+2012,Female,>=Bachelor,"[15k,25k)",283574
+2012,Female,>=Bachelor,"[25k,35k)",310527
+2012,Female,>=Bachelor,"[35k,50k)",485498
+2012,Female,>=Bachelor,"[50k,75k)",684421
+2012,Female,>=Bachelor,"[75k,inf)",829905
+2013,Male,< high school,No Income,348812
+2013,Male,< high school,"[5k,10k)",209881
+2013,Male,< high school,"[10k,15k)",248722
+2013,Male,< high school,"[15k,25k)",473160
+2013,Male,< high school,"[25k,35k)",287918
+2013,Male,< high school,"[35k,50k)",163709
+2013,Male,< high school,"[50k,75k)",86281
+2013,Male,< high school,"[75k,inf)",30760
+2013,Male,High school or equivalent,No Income,372961
+2013,Male,High school or equivalent,"[5k,10k)",184943
+2013,Male,High school or equivalent,"[10k,15k)",258773
+2013,Male,High school or equivalent,"[15k,25k)",425530
+2013,Male,High school or equivalent,"[25k,35k)",438925
+2013,Male,High school or equivalent,"[35k,50k)",456199
+2013,Male,High school or equivalent,"[50k,75k)",334524
+2013,Male,High school or equivalent,"[75k,inf)",235147
+2013,Male,College (<4year),No Income,356010
+2013,Male,College (<4year),"[5k,10k)",258589
+2013,Male,College (<4year),"[10k,15k)",287720
+2013,Male,College (<4year),"[15k,25k)",502982
+2013,Male,College (<4year),"[25k,35k)",432793
+2013,Male,College (<4year),"[35k,50k)",473400
+2013,Male,College (<4year),"[50k,75k)",449846
+2013,Male,College (<4year),"[75k,inf)",490899
+2013,Male,>=Bachelor,No Income,138459
+2013,Male,>=Bachelor,"[5k,10k)",67986
+2013,Male,>=Bachelor,"[10k,15k)",125136
+2013,Male,>=Bachelor,"[15k,25k)",252257
+2013,Male,>=Bachelor,"[25k,35k)",282909
+2013,Male,>=Bachelor,"[35k,50k)",405494
+2013,Male,>=Bachelor,"[50k,75k)",599541
+2013,Male,>=Bachelor,"[75k,inf)",1643095
+2013,Female,< high school,No Income,637445
+2013,Female,< high school,"[5k,10k)",225537
+2013,Female,< high school,"[10k,15k)",229231
+2013,Female,< high school,"[15k,25k)",284092
+2013,Female,< high school,"[25k,35k)",99143
+2013,Female,< high school,"[35k,50k)",52571
+2013,Female,< high school,"[50k,75k)",15944
+2013,Female,< high school,"[75k,inf)",3886
+2013,Female,High school or equivalent,No Income,664769
+2013,Female,High school or equivalent,"[5k,10k)",245728
+2013,Female,High school or equivalent,"[10k,15k)",265604
+2013,Female,High school or equivalent,"[15k,25k)",466935
+2013,Female,High school or equivalent,"[25k,35k)",293672
+2013,Female,High school or equivalent,"[35k,50k)",238689
+2013,Female,High school or equivalent,"[50k,75k)",134465
+2013,Female,High school or equivalent,"[75k,inf)",61381
+2013,Female,College (<4year),No Income,531822
+2013,Female,College (<4year),"[5k,10k)",380107
+2013,Female,College (<4year),"[10k,15k)",384072
+2013,Female,College (<4year),"[15k,25k)",617513
+2013,Female,College (<4year),"[25k,35k)",453189
+2013,Female,College (<4year),"[35k,50k)",497833
+2013,Female,College (<4year),"[50k,75k)",399381
+2013,Female,College (<4year),"[75k,inf)",200690
+2013,Female,>=Bachelor,No Income,325064
+2013,Female,>=Bachelor,"[5k,10k)",199405
+2013,Female,>=Bachelor,"[10k,15k)",160795
+2013,Female,>=Bachelor,"[15k,25k)",350595
+2013,Female,>=Bachelor,"[25k,35k)",340393
+2013,Female,>=Bachelor,"[35k,50k)",510047
+2013,Female,>=Bachelor,"[50k,75k)",675331
+2013,Female,>=Bachelor,"[75k,inf)",917079
+2014,Male,< high school,No Income,376783
+2014,Male,< high school,"[5k,10k)",158572
+2014,Male,< high school,"[10k,15k)",231957
+2014,Male,< high school,"[15k,25k)",460129
+2014,Male,< high school,"[25k,35k)",288460
+2014,Male,< high school,"[35k,50k)",194888
+2014,Male,< high school,"[50k,75k)",104646
+2014,Male,< high school,"[75k,inf)",54734
+2014,Male,High school or equivalent,No Income,405204
+2014,Male,High school or equivalent,"[5k,10k)",238754
+2014,Male,High school or equivalent,"[10k,15k)",200365
+2014,Male,High school or equivalent,"[15k,25k)",520580
+2014,Male,High school or equivalent,"[25k,35k)",467906
+2014,Male,High school or equivalent,"[35k,50k)",418051
+2014,Male,High school or equivalent,"[50k,75k)",322511
+2014,Male,High school or equivalent,"[75k,inf)",227515
+2014,Male,College (<4year),No Income,343156
+2014,Male,College (<4year),"[5k,10k)",255129
+2014,Male,College (<4year),"[10k,15k)",278291
+2014,Male,College (<4year),"[15k,25k)",556174
+2014,Male,College (<4year),"[25k,35k)",371185
+2014,Male,College (<4year),"[35k,50k)",495675
+2014,Male,College (<4year),"[50k,75k)",423087
+2014,Male,College (<4year),"[75k,inf)",495187
+2014,Male,>=Bachelor,No Income,181482
+2014,Male,>=Bachelor,"[5k,10k)",86481
+2014,Male,>=Bachelor,"[10k,15k)",104462
+2014,Male,>=Bachelor,"[15k,25k)",233954
+2014,Male,>=Bachelor,"[25k,35k)",218789
+2014,Male,>=Bachelor,"[35k,50k)",357532
+2014,Male,>=Bachelor,"[50k,75k)",682425
+2014,Male,>=Bachelor,"[75k,inf)",1628605
+2014,Female,< high school,No Income,723208
+2014,Female,< high school,"[5k,10k)",239883
+2014,Female,< high school,"[10k,15k)",189839
+2014,Female,< high school,"[15k,25k)",277974
+2014,Female,< high school,"[25k,35k)",120389
+2014,Female,< high school,"[35k,50k)",43218
+2014,Female,< high school,"[50k,75k)",14635
+2014,Female,< high school,"[75k,inf)",2058
+2014,Female,High school or equivalent,No Income,670294
+2014,Female,High school or equivalent,"[5k,10k)",266348
+2014,Female,High school or equivalent,"[10k,15k)",272824
+2014,Female,High school or equivalent,"[15k,25k)",453432
+2014,Female,High school or equivalent,"[25k,35k)",318868
+2014,Female,High school or equivalent,"[35k,50k)",245318
+2014,Female,High school or equivalent,"[50k,75k)",128589
+2014,Female,High school or equivalent,"[75k,inf)",52375
+2014,Female,College (<4year),No Income,581907
+2014,Female,College (<4year),"[5k,10k)",404151
+2014,Female,College (<4year),"[10k,15k)",389764
+2014,Female,College (<4year),"[15k,25k)",483518
+2014,Female,College (<4year),"[25k,35k)",528017
+2014,Female,College (<4year),"[35k,50k)",469153
+2014,Female,College (<4year),"[50k,75k)",344454
+2014,Female,College (<4year),"[75k,inf)",155579
+2014,Female,>=Bachelor,No Income,359264
+2014,Female,>=Bachelor,"[5k,10k)",148975
+2014,Female,>=Bachelor,"[10k,15k)",206941
+2014,Female,>=Bachelor,"[15k,25k)",352744
+2014,Female,>=Bachelor,"[25k,35k)",340611
+2014,Female,>=Bachelor,"[35k,50k)",531019
+2014,Female,>=Bachelor,"[50k,75k)",660048
+2014,Female,>=Bachelor,"[75k,inf)",953282
